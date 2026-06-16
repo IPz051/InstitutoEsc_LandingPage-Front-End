@@ -19,19 +19,19 @@ type EcosystemCard = {
 const ecosystemCards: EcosystemCard[] = [
   {
     title: "Instituto ESC",
-    description: "O novo ecossistema do Direito Previdenciario",
+    description: "O novo ecossistema do Direito Previdenciário",
     icon: LayoutGrid,
     featured: true,
     className: "md:col-span-1 md:row-span-2",
   },
   {
     title: "Plataforma",
-    description: "Membros, previas, biblioteca e comunidade.",
+    description: "Membros, prévias, biblioteca e comunidade.",
     icon: LayoutGrid,
   },
   {
     title: "Cursos presenciais",
-    description: "5 imersoes tecnicas por ano.",
+    description: "5 imersões técnicas por ano.",
     icon: UsersRound,
   },
   {
@@ -45,13 +45,13 @@ const ecosystemCards: EcosystemCard[] = [
     icon: Stars,
   },
   {
-    title: "Metis",
-    description: "Sistema de gestao do escritorio.",
+    title: "Metis / Pronoia",
+    description: "Sistema de gestão do escritório.",
     icon: ShieldCheck,
   },
   {
     title: "AMS Advocacia",
-    description: "A metodologia validada na pratica.",
+    description: "A metodologia validada na prática.",
     icon: BookOpenText,
   },
 ];
@@ -73,7 +73,7 @@ function FeaturedCard() {
         </h3>
 
         <p className="mt-3 max-w-[18rem] text-sm leading-6 text-white/86 md:text-[15px]">
-          O Novo Ecossistema do Direito Previdenciario
+          O Novo Ecossistema do Direito Previdenciário
         </p>
       </div>
     </article>
@@ -108,14 +108,14 @@ export function EcosystemSection() {
           </p>
 
           <h2 className="section-title mt-4 text-[2.3rem] font-extrabold leading-[1.02] tracking-[-0.05em] text-[var(--foreground)] sm:text-[3.15rem]">
-            Um ecossistema, nao um curso
+            Um ecossistema, não um curso
             <br className="hidden sm:block" />
             avulso
           </h2>
 
           <p className="mx-auto mt-5 max-w-[620px] text-base leading-7 text-[var(--muted-foreground)] sm:text-lg">
-            Tudo converge para a plataforma central. Formacao, pratica e
-            comunidade alimentam um ciclo continuo de evolucao.
+            Tudo converge para a plataforma central. Formação, prática e
+            comunidade alimentam um ciclo contínuo de evolução.
           </p>
         </div>
 

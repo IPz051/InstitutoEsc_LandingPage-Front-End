@@ -49,7 +49,7 @@ export function RegistrationPage() {
                     name="nome"
                     type="text"
                     className="field-input"
-                    placeholder="Como voce deseja ser chamado"
+                    placeholder="Como você deseja ser chamado"
                   />
                 </div>
 
@@ -136,7 +136,7 @@ export function RegistrationPage() {
                     href="/"
                     className="text-center text-sm font-semibold text-[var(--primary)] transition hover:text-[#2845a8] sm:text-left"
                   >
-                    Voltar para a pagina inicial
+                    Voltar para a página inicial
                   </Link>
                 </div>
               </form>

@@ -17,6 +17,8 @@ type NavbarProps = {
 
 export function Navbar({ items }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const platformLoginHref =
+    process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ?? "http://localhost:3000";
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5">
@@ -63,11 +65,11 @@ export function Navbar({ items }: NavbarProps) {
               </div>
 
               <Link
-                href="#area-do-aluno"
+                href={platformLoginHref}
                 className="inline-flex items-center gap-2 rounded-full bg-[var(--muted)] px-4 py-2.5 text-sm font-semibold text-[var(--primary)] transition hover:bg-[rgba(91,110,240,0.12)]"
               >
                 <Lock className="h-4 w-4" />
-                Area do Aluno
+                Área do Aluno
               </Link>
             </div>
 
@@ -94,7 +96,7 @@ export function Navbar({ items }: NavbarProps) {
                 <div className="mt-4 space-y-3 border-t border-[var(--border)] pt-4">
                   <div className="flex items-center gap-2 rounded-full bg-[var(--muted)] px-3 py-2 text-sm text-[var(--muted-foreground)]">
                     <Globe className="h-4 w-4 text-[var(--primary)]" />
-                    Portugues e Ingles
+                    Português e Inglês
                   </div>
 
                   <nav className="space-y-2">
@@ -112,12 +114,12 @@ export function Navbar({ items }: NavbarProps) {
                   </nav>
 
                   <Link
-                    href="#area-do-aluno"
+                    href={platformLoginHref}
                     onClick={() => setIsOpen(false)}
                     className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-[var(--primary)] px-4 py-3 text-sm font-semibold text-white shadow-[0_18px_35px_rgba(46,79,190,0.24)]"
                   >
                     <Lock className="h-4 w-4" />
-                    Entrar na Area do Aluno
+                    Entrar na Área do Aluno
                   </Link>
                 </div>
               </motion.div>

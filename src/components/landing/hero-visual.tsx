@@ -67,14 +67,14 @@ export function HeroVisual() {
             Solte uma foto
           </p>
           <p className="mt-1 text-sm text-[var(--muted-foreground)]/80">
-            imersao presencial
+            imersão presencial
           </p>
         </div>
       </div>
 
       <FloatingCard
-        title="6 modulos"
-        subtitle="Formacao completa"
+        title="6 módulos"
+        subtitle="Formação completa"
         delay={0.2}
         icon={<Layers3 className="h-5 w-5" />}
         className="right-0 top-2 w-[170px] sm:w-[190px]"

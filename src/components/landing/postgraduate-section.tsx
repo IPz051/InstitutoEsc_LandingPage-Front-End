@@ -20,12 +20,12 @@ const modules: Module[] = [
     id: "01",
     name: "Comercial",
     description:
-      "Aquisicao, qualificacao e conversao de clientes previdenciarios.",
+      "Aquisição, qualificação e conversão de clientes previdenciários.",
     lessons: [
-      { title: "Posicionamento e nicho previdenciario", duration: "14 min" },
-      { title: "Funil de aquisicao que converte", duration: "22 min" },
-      { title: "Atendimento e qualificacao do lead", duration: "18 min" },
-      { title: "Honorarios e proposta de valor", duration: "16 min" },
+      { title: "Posicionamento e nicho previdenciário", duration: "14 min" },
+      { title: "Funil de aquisição que converte", duration: "22 min" },
+      { title: "Atendimento e qualificação do lead", duration: "18 min" },
+      { title: "Honorários e proposta de valor", duration: "16 min" },
     ],
   },
   {
@@ -33,11 +33,11 @@ const modules: Module[] = [
     name: "Saneamento",
 
     description:
-      "Organizacao documental, triagem inteligente e preparacao do caso.",
+      "Organização documental, triagem inteligente e preparação do caso.",
     lessons: [
       { title: "Checklist de documentos essenciais", duration: "12 min" },
-      { title: "Analise preliminar com foco em viabilidade", duration: "19 min" },
-      { title: "Padronizacao do fluxo de entrada", duration: "15 min" },
+      { title: "Análise preliminar com foco em viabilidade", duration: "19 min" },
+      { title: "Padronização do fluxo de entrada", duration: "15 min" },
     ],
   },
   {
@@ -45,11 +45,11 @@ const modules: Module[] = [
     name: "Judicial",
 
     description:
-      "Construcao da estrategia processual com foco em resultado e escala.",
+      "Construção da estratégia processual com foco em resultado e escala.",
     lessons: [
       { title: "Montagem da tese central", duration: "20 min" },
-      { title: "Peticao inicial com repertorio probatorio", duration: "24 min" },
-      { title: "Acompanhamento estrategico do processo", duration: "17 min" },
+      { title: "Petição inicial com repertório probatório", duration: "24 min" },
+      { title: "Acompanhamento estratégico do processo", duration: "17 min" },
     ],
   },
   {
@@ -57,11 +57,11 @@ const modules: Module[] = [
     name: "Tecnologia",
 
     description:
-      "Ferramentas, automacoes e produtividade aplicada ao escritorio.",
+      "Ferramentas, automações e produtividade aplicada ao escritório.",
     lessons: [
       { title: "Estrutura digital do operacional", duration: "13 min" },
-      { title: "Automacao de tarefas recorrentes", duration: "21 min" },
-      { title: "Uso pratico de IA na rotina", duration: "18 min" },
+      { title: "Automação de tarefas recorrentes", duration: "21 min" },
+      { title: "Uso prático de IA na rotina", duration: "18 min" },
     ],
   },
   {
@@ -69,31 +69,31 @@ const modules: Module[] = [
     name: "Financeiro",
 
     description:
-      "Precificacao, previsibilidade e leitura financeira da operacao.",
+      "Precificação, previsibilidade e leitura financeira da operação.",
     lessons: [
       { title: "Modelo de receita por carteira", duration: "15 min" },
       { title: "Controle de indicadores-chave", duration: "16 min" },
-      { title: "Margem, fluxo e expansao", duration: "14 min" },
+      { title: "Margem, fluxo e expansão", duration: "14 min" },
     ],
   },
   {
     id: "06",
-    name: "Inteligencia Artificial",
+    name: "Inteligência Artificial",
 
     description:
-      "Aplicacoes reais de IA para acelerar analise, conteudo e decisao.",
+      "Aplicações reais de IA para acelerar análise, conteúdo e decisão.",
     lessons: [
-      { title: "Prompts para produtividade juridica", duration: "11 min" },
-      { title: "Apoio a analise de casos e documentos", duration: "19 min" },
+      { title: "Prompts para produtividade jurídica", duration: "11 min" },
+      { title: "Apoio à análise de casos e documentos", duration: "19 min" },
       { title: "Fluxos assistidos para escala", duration: "17 min" },
     ],
   },
 ];
 
 const stats = [
-  { value: "6", label: "Modulos" },
+  { value: "6", label: "Módulos" },
   { value: "19", label: "Aulas" },
-  { value: "∞", label: "Acesso vitalicio" },
+  { value: "∞", label: "Acesso vitalício" },
 ];
 
 export function PostgraduateSection() {
@@ -110,7 +110,7 @@ export function PostgraduateSection() {
         <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
           <div className="max-w-[670px]">
             <p className="text-xs font-bold uppercase tracking-[0.3em] text-[var(--primary)]">
-              Formacao Completa · 100% Online
+              Formação Completa · 100% Online
             </p>
 
             <h2 className="section-title mt-4 text-[2.55rem] font-extrabold leading-[0.98] tracking-[-0.06em] text-[var(--foreground)] sm:text-[3.3rem] lg:text-[4rem]">
@@ -118,8 +118,8 @@ export function PostgraduateSection() {
             </h2>
 
             <p className="mt-5 max-w-[720px] text-base leading-7 text-[var(--muted-foreground)] sm:text-lg">
-              Seis modulos que cobrem toda a operacao de um escritorio
-              previdenciario de alta performance, do comercial a inteligencia
+              Seis módulos que cobrem toda a operação de um escritório
+              previdenciário de alta performance, do comercial à inteligência
               artificial.
             </p>
           </div>
@@ -169,9 +169,6 @@ export function PostgraduateSection() {
                       </div>
 
                       <div className="flex items-center gap-3">
-                        <span className="text-xs font-semibold text-[var(--muted-foreground)]">
-                          {module.lessons.length} aulas
-                        </span>
                         {isActive ? (
                           <ArrowRight className="h-4 w-4 text-[var(--primary)]" />
                         ) : null}
@@ -184,7 +181,7 @@ export function PostgraduateSection() {
 
             <div className="rounded-[24px] bg-[#fcfcfe] px-5 py-5 sm:px-6 sm:py-6 lg:px-7">
               <div className="inline-flex rounded-full bg-[var(--primary)] px-3 py-1.5 text-xs font-bold text-white">
-                Modulo {activeModule.id}
+                Módulo {activeModule.id}
               </div>
 
               <h3 className="section-title mt-4 text-[2.2rem] font-bold tracking-[-0.05em] text-[var(--foreground)]">
@@ -218,7 +215,7 @@ export function PostgraduateSection() {
                 type="button"
                 className="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-[var(--primary)] px-6 py-3.5 text-sm font-semibold text-white shadow-[0_16px_34px_rgba(46,79,190,0.20)] transition hover:bg-[#2845a8]"
               >
-                Entrar na formacao
+                Entrar na formação
                 <ArrowRight className="h-4 w-4" />
               </button>
             </div>

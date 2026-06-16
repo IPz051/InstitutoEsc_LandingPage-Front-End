@@ -12,9 +12,9 @@ const ecosystemLinks = [
 
 const courseLinks = [
   { label: "Cursos presenciais", href: "#cursos" },
-  { label: "Formacao", href: "#formacao" },
+  { label: "Formação", href: "#formacao" },
   { label: "Planos", href: "#planos" },
-  { label: "Area do Aluno", href: "#area-do-aluno" },
+  { label: "Área do Aluno", href: "#area-do-aluno" },
 ];
 
 type FooterColumnProps = {
@@ -60,7 +60,7 @@ export function Footer() {
             />
 
             <p className="mt-8 text-xl leading-9 text-white/68">
-              O Novo Ecossistema do Direito Previdenciario
+              O Novo Ecossistema do Direito Previdenciário
             </p>
           </div>
 
@@ -71,7 +71,7 @@ export function Footer() {
         <div className="mt-14 border-t border-white/10 pt-6">
           <div className="flex flex-col gap-4 text-[1.05rem] text-white/58 sm:flex-row sm:items-center sm:justify-between">
             <p>© 2026 Instituto ESC. Todos os direitos reservados.</p>
-            <p>Florianopolis - SC</p>
+            <p>Florianópolis - SC</p>
           </div>
         </div>
       </div>

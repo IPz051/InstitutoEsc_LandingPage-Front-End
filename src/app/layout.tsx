@@ -15,9 +15,9 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Instituto ESC | Direito Previdenciario",
+  title: "Instituto ESC | Direito Previdenciário",
   description:
-    "Landing page institucional do Instituto ESC com foco em formacao premium para advogados previdenciaristas.",
+    "Landing page institucional do Instituto ESC com foco em formação premium para advogados previdenciaristas.",
 };
 
 export default function RootLayout({

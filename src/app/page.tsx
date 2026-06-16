@@ -8,11 +8,15 @@ import { Navbar } from "@/components/landing/navbar";
 import { PostgraduateSection } from "@/components/landing/postgraduate-section";
 import { ProfessionalsSection } from "@/components/landing/professionals-section";
 import { PricingSection } from "@/components/landing/pricing-section";
+import { TestimonialsSection } from "@/components/landing/testimonials-section";
 
 const navigationItems = [
   { label: "O Instituto", href: "#instituto" },
+  { label: "Estrutura", href: "#estrutura" },
   { label: "Cursos", href: "#cursos" },
-  { label: "Formacao", href: "#formacao" },
+  { label: "Formação", href: "#formacao" },
+  { label: "Professores", href: "#professores" },
+  { label: "Depoimentos", href: "#depoimentos" },
   { label: "Planos", href: "#planos" },
 ];
 
@@ -26,6 +30,7 @@ export default function Home() {
       <ImmersionsSection />
       <PostgraduateSection />
       <ProfessionalsSection />
+      <TestimonialsSection />
       <PricingSection />
       <FinalCtaSection />
       <Footer />

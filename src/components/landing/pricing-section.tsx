@@ -14,43 +14,43 @@ const plans: Plan[] = [
   {
     name: "Essencial",
     description:
-      "Para advogados estruturando o escritorio e a presenca digital.",
+      "Para advogados estruturando o escritório e a presença digital.",
     price: "199",
     features: [
-      "Previas dos cursos (2-3 aulas)",
-      "Templates e modelas basicos",
+      "Prévias dos cursos (2-3 aulas)",
+      "Templates e modelos básicos",
       "Comunidade ESC",
       "Todas as PrevExperience virtuais",
-      "Gravacao por 30 dias",
+      "Gravação por 30 dias",
       "10% de desconto nos presenciais",
     ],
   },
   {
     name: "Profissional",
-    description: "Para quem quer formacao + presenca digital",
+    description: "Para quem quer formação + presença digital",
     price: "349",
     highlighted: true,
     badge: "Mais popular",
     features: [
-      "Modulo 1 completo de cada curso",
+      "Módulo 1 completo de cada curso",
       "Biblioteca completa de templates",
       "1 livro digital anual",
       "Live exclusiva mensal",
       "Branding completo + posicionamento",
-      "Gravacao por 60 dias",
+      "Gravação por 60 dias",
       "20% de desconto nos presenciais",
     ],
   },
   {
     name: "Premium",
-    description: "O ecossistema ESC completo, com maxima visibilidade",
+    description: "O ecossistema ESC completo, com máxima visibilidade",
     price: "499",
     features: [
-      "Acesso total a todo o conteudo",
-      "2 livros anuais (digital + fisico)",
-      "Acesso antecipado as vagas",
-      "2 lives mes + arquivo",
-      "Gravacao permanente na plataforma",
+      "Acesso total a todo o conteúdo",
+      "2 livros anuais (digital + físico)",
+      "Acesso antecipado às vagas",
+      "2 lives por mês + arquivo",
+      "Gravação permanente na plataforma",
       "PrevExperience presencial inclusa*",
       "50% no Summit · 30% presenciais",
     ],
@@ -88,7 +88,7 @@ function PlanCard({ plan }: { plan: Plan }) {
           {plan.price}
         </span>
         <span className="mb-1 text-sm font-semibold text-[var(--muted-foreground)]">
-          /mes
+          /mês
         </span>
       </div>
 
@@ -134,8 +134,8 @@ export function PricingSection() {
           </h2>
 
           <p className="mx-auto mt-4 max-w-[720px] text-base leading-7 text-[var(--muted-foreground)] sm:text-lg">
-            A assinatura centraliza sua evolucao, protege seu preco e reduz
-            seus custos de operacao.
+            A assinatura centraliza sua evolução, protege seu preço e reduz
+            seus custos de operação.
           </p>
         </div>
 
@@ -152,7 +152,7 @@ export function PricingSection() {
             </div>
             <div>
               <p className="text-sm font-semibold text-[var(--foreground)]">
-                Trava de preco vitalicia
+                Trava de preço vitalícia
               </p>
               <p className="mt-1 text-[12px] leading-5 text-[var(--muted-foreground)]">
                 Membros fundadores nunca sofrem reajuste enquanto o plano
@@ -167,7 +167,7 @@ export function PricingSection() {
             type="button"
             className="inline-flex items-center gap-2 rounded-full border border-[var(--primary)] bg-transparent px-5 py-3 text-sm font-semibold text-[var(--primary)] transition hover:bg-[rgba(46,79,190,0.05)]"
           >
-            Comparar todos os beneficios
+            Comparar todos os benefícios
             <ChevronDown className="h-4 w-4" />
           </button>
         </div>

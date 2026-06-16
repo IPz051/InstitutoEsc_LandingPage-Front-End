@@ -21,8 +21,8 @@ export function FinalCtaSection() {
             </h2>
 
             <p className="mx-auto mt-6 max-w-[760px] text-lg leading-8 text-white/88 sm:text-[1.65rem] sm:leading-10">
-              Junte-se aos advogados que estao a frente do novo Direito
-              Previdenciario.
+              Junte-se aos advogados que estão à frente do novo Direito
+              Previdenciário.
             </p>
 
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-5">

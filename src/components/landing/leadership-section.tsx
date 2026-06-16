@@ -11,19 +11,19 @@ type Leader = {
 const leaders: Leader[] = [
   {
     name: "Dr. Everson Salem",
-    role: "Fundador · Estrategia & Gestao",
+    role: "Fundador · Estratégia & Gestão",
     description:
-      "Advogado previdenciario e fundador do escritorio AMS, referencia em SC. Criador do PrevSummit e do Instituto ESC. Traz a visao de quem construiu uma operacao escalavel e lucrativa.",
+      "Advogado previdenciário e fundador do escritório AMS, referência em SC. Criador do PrevSummit e do Instituto ESC. Traz a visão de quem construiu uma operação escalável e lucrativa.",
     placeholder: "Foto — Dr. Everson Salem",
     badges: ["+1.000 processos", "+10 especialistas"],
   },
   {
     name: "Dra. Valeria Lesnik",
-    role: "Especialista · Tecnica & Pratica",
+    role: "Especialista · Técnica & Prática",
     description:
-      "Idealizadora do Pronoia. Garante a profundidade e o rigor juridico em todas as lives e eventos. Sua atuacao diaria nos casos mais complexos valida a metodologia ensinada no Instituto.",
+      "Idealizadora do Pronoia. Garante a profundidade e o rigor jurídico em todas as lives e eventos. Sua atuação diária nos casos mais complexos valida a metodologia ensinada no Instituto.",
     placeholder: "Foto — Dra. Valeria Lesnik",
-    badges: ["100% foco previdenciario", "AMS · parceiro"],
+    badges: ["100% foco previdenciário", "AMS · parceiro"],
   },
 ];
 
@@ -75,7 +75,7 @@ export function LeadershipSection() {
       <div className="container-shell">
         <div className="mx-auto max-w-[760px] text-center">
           <p className="text-xs font-bold uppercase tracking-[0.3em] text-[var(--primary)]">
-            Lideranca e Autoridade
+            Liderança e Autoridade
           </p>
 
           <h2 className="section-title mt-5 text-[2.5rem] font-extrabold leading-[1.02] tracking-[-0.06em] text-[var(--foreground)] sm:text-[3.2rem] lg:text-[4rem]">

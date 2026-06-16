@@ -9,7 +9,7 @@ const navigationItems: Array<{ label: string; href: string }> = [];
 export const metadata: Metadata = {
   title: "Cadastro | Instituto ESC",
   description:
-    "Pagina de cadastro do Instituto ESC para profissionais que desejam iniciar sua jornada no ecossistema previdenciario.",
+    "Página de cadastro do Instituto ESC para profissionais que desejam iniciar sua jornada no ecossistema previdenciário.",
 };
 
 export default function CadastroPage() {
