@@ -4,7 +4,7 @@ type StatItem = {
 };
 
 type StatsGridProps = {
-  items: StatItem[];
+  items: ReadonlyArray<StatItem>;
 };
 
 export function StatsGrid({ items }: StatsGridProps) {

@@ -2,7 +2,13 @@ import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-export function FinalCtaSection() {
+import type { LandingCopy } from "@/components/landing/content";
+
+type FinalCtaSectionProps = {
+  copy: LandingCopy["finalCta"];
+};
+
+export function FinalCtaSection({ copy }: FinalCtaSectionProps) {
   return (
     <section className="bg-[#f5f6fa] px-3 pb-20 pt-6 sm:px-5 sm:pb-24 lg:pb-28">
       <div className="container-shell">
@@ -17,12 +23,11 @@ export function FinalCtaSection() {
             />
 
             <h2 className="section-title mx-auto mt-8 max-w-[760px] text-[2.5rem] font-extrabold leading-[0.98] tracking-[-0.06em] text-white sm:text-[3.7rem] lg:text-[4.8rem]">
-              Pronto para construir sua autoridade?
+              {copy.title}
             </h2>
 
             <p className="mx-auto mt-6 max-w-[760px] text-lg leading-8 text-white/88 sm:text-[1.65rem] sm:leading-10">
-              Junte-se aos advogados que estão à frente do novo Direito
-              Previdenciário.
+              {copy.description}
             </p>
 
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-5">
@@ -30,7 +35,7 @@ export function FinalCtaSection() {
                 href="/cadastro"
                 className="inline-flex min-w-[240px] items-center justify-center gap-3 rounded-full bg-white px-8 py-4 text-lg font-semibold text-[var(--primary)] transition hover:bg-[#f4f7ff]"
               >
-                Quero Participar
+                {copy.primaryCta}
                 <ArrowRight className="h-5 w-5" />
               </Link>
 
@@ -38,7 +43,7 @@ export function FinalCtaSection() {
                 href="#planos"
                 className="inline-flex min-w-[240px] items-center justify-center rounded-full border border-white/45 bg-transparent px-8 py-4 text-lg font-semibold text-white transition hover:bg-white/8"
               >
-                Conhecer os planos
+                {copy.secondaryCta}
               </Link>
             </div>
           </div>

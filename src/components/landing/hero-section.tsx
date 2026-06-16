@@ -4,16 +4,15 @@ import { motion } from "framer-motion";
 import { ArrowRight, Play } from "lucide-react";
 import Link from "next/link";
 
+import type { LandingCopy } from "@/components/landing/content";
 import { HeroVisual } from "@/components/landing/hero-visual";
 import { StatsGrid } from "@/components/landing/stats-grid";
 
-const stats = [
-  { value: "+1.000", label: "processos conduzidos com método e escala." },
-  { value: "+10", label: "especialistas compartilhando experiência real." },
-  { value: "100%", label: "foco previdenciário em toda a formação." },
-];
+type HeroSectionProps = {
+  copy: LandingCopy["hero"];
+};
 
-export function HeroSection() {
+export function HeroSection({ copy }: HeroSectionProps) {
   return (
     <section className="relative overflow-hidden bg-[#f6f7fb] pt-32 sm:pt-36">
       <div className="absolute inset-x-0 top-0 h-40 bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(255,255,255,0))]" />
@@ -30,23 +29,16 @@ export function HeroSection() {
           >
             <div className="inline-flex items-center gap-2 rounded-full border border-[rgba(46,79,190,0.12)] bg-white/85 px-4 py-2 text-sm font-semibold text-[var(--primary)] shadow-[0_10px_30px_rgba(46,79,190,0.08)]">
               <span className="h-2.5 w-2.5 rounded-full bg-[var(--secondary)]" />
-              Formação premium para advogados previdenciaristas
+              {copy.badge}
             </div>
 
-            <h1 className="section-title mt-8 text-[2.9rem] leading-[0.96] font-extrabold tracking-[-0.06em] text-[var(--foreground)] sm:text-[4.2rem] lg:text-[5.7rem]">
-              Liderança,
-              <br />
-              autoridade
-              <br />
-              e resultados.
-              <br />
-              <span className="gradient-text">Sempre juntos.</span>
+            <h1 className="section-title mt-8 text-[2.9rem] leading-[0.96] font-extrabold tracking-[-0.06em] text-[var(--foreground)] whitespace-pre-line sm:text-[4.2rem] lg:text-[5.7rem]">
+              {copy.title}
+              <span className="gradient-text block">{copy.highlight}</span>
             </h1>
 
             <p className="mt-7 max-w-[40rem] text-lg leading-8 text-[var(--muted-foreground)] sm:text-xl">
-              O Instituto ESC reúne formação, comunidade e método para
-              advogados que querem construir uma operação previdenciária
-              escalável, lucrativa e posicionada como referência.
+              {copy.description}
             </p>
 
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
@@ -54,7 +46,7 @@ export function HeroSection() {
                 href="/cadastro"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--primary)] px-7 py-4 text-base font-semibold text-white shadow-[0_22px_48px_rgba(46,79,190,0.28)] transition hover:bg-[#2845a8]"
               >
-                Começar agora
+                {copy.primaryCta}
                 <ArrowRight className="h-4 w-4" />
               </Link>
 
@@ -63,16 +55,16 @@ export function HeroSection() {
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-[var(--border)] bg-white/88 px-7 py-4 text-base font-semibold text-[var(--foreground)] transition hover:border-[rgba(46,79,190,0.18)] hover:text-[var(--primary)]"
               >
                 <Play className="h-4 w-4 fill-current" />
-                Ver a formação completa
+                {copy.secondaryCta}
               </Link>
             </div>
 
             <div className="mt-12">
-              <StatsGrid items={stats} />
+              <StatsGrid items={copy.stats} />
             </div>
           </motion.div>
 
-          <HeroVisual />
+          <HeroVisual copy={copy.visual} />
         </div>
       </div>
     </section>

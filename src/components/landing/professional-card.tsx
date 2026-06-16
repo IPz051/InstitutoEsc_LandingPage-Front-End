@@ -7,14 +7,18 @@ export type ProfessionalCardData = {
   description: string;
   imageSrc?: string;
   imageAlt?: string;
-  highlights?: string[];
+  highlights?: ReadonlyArray<string>;
 };
 
 type ProfessionalCardProps = {
   professional: ProfessionalCardData;
+  imageFallbackLabel: string;
 };
 
-export function ProfessionalCard({ professional }: ProfessionalCardProps) {
+export function ProfessionalCard({
+  professional,
+  imageFallbackLabel,
+}: ProfessionalCardProps) {
   return (
     <article className="overflow-hidden rounded-[26px] border border-[rgba(17,23,47,0.08)] bg-white shadow-[0_14px_40px_rgba(17,23,47,0.05)]">
       <div className="relative aspect-[16/10] w-full bg-[linear-gradient(180deg,rgba(250,250,252,0.96),rgba(245,246,250,0.96))]">
@@ -30,7 +34,7 @@ export function ProfessionalCard({ professional }: ProfessionalCardProps) {
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="flex items-center gap-3 rounded-2xl border border-[rgba(17,23,47,0.10)] bg-white/85 px-4 py-3 text-[var(--muted-foreground)]">
               <ImageIcon className="h-5 w-5" />
-              <span className="text-sm font-medium">Foto do professor</span>
+                <span className="text-sm font-medium">{imageFallbackLabel}</span>
             </div>
           </div>
         )}

@@ -1,10 +1,6 @@
 import type { Metadata } from "next";
 
-import { Footer } from "@/components/landing/footer";
-import { Navbar } from "@/components/landing/navbar";
-import { RegistrationPage } from "@/components/cadastro/registration-page";
-
-const navigationItems: Array<{ label: string; href: string }> = [];
+import { CadastroPageClient } from "@/components/cadastro/cadastro-page-client";
 
 export const metadata: Metadata = {
   title: "Cadastro | Instituto ESC",
@@ -13,11 +9,5 @@ export const metadata: Metadata = {
 };
 
 export default function CadastroPage() {
-  return (
-    <>
-      <Navbar items={navigationItems} />
-      <RegistrationPage />
-      <Footer />
-    </>
-  );
+  return <CadastroPageClient />;
 }

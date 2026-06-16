@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import { ImageIcon, Layers3, UsersRound } from "lucide-react";
 
+import type { LandingCopy } from "@/components/landing/content";
+
 const floatTransition = {
   duration: 4.8,
   repeat: Number.POSITIVE_INFINITY,
@@ -47,7 +49,11 @@ function FloatingCard({
   );
 }
 
-export function HeroVisual() {
+type HeroVisualProps = {
+  copy: LandingCopy["hero"]["visual"];
+};
+
+export function HeroVisual({ copy }: HeroVisualProps) {
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.98, y: 32 }}
@@ -64,25 +70,25 @@ export function HeroVisual() {
             <ImageIcon className="h-7 w-7" />
           </div>
           <p className="mt-6 text-sm font-medium text-[var(--muted-foreground)] sm:text-base">
-            Solte uma foto
+            {copy.placeholderTitle}
           </p>
           <p className="mt-1 text-sm text-[var(--muted-foreground)]/80">
-            imersão presencial
+            {copy.placeholderSubtitle}
           </p>
         </div>
       </div>
 
       <FloatingCard
-        title="6 módulos"
-        subtitle="Formação completa"
+        title={copy.moduleCardTitle}
+        subtitle={copy.moduleCardSubtitle}
         delay={0.2}
         icon={<Layers3 className="h-5 w-5" />}
         className="right-0 top-2 w-[170px] sm:w-[190px]"
       />
 
       <FloatingCard
-        title="Comunidade ESC"
-        subtitle="advogados ativos"
+        title={copy.communityCardTitle}
+        subtitle={copy.communityCardSubtitle}
         delay={0.4}
         icon={
           <div className="flex items-center gap-1 text-[var(--primary)]">
@@ -105,8 +111,8 @@ export function HeroVisual() {
           <UsersRound className="h-5 w-5" />
         </div>
         <div className="text-left">
-          <p className="text-sm font-semibold text-[var(--foreground)]">+1.000 alunos</p>
-          <p className="text-xs text-[var(--muted-foreground)]">na comunidade premium</p>
+          <p className="text-sm font-semibold text-[var(--foreground)]">{copy.studentsTitle}</p>
+          <p className="text-xs text-[var(--muted-foreground)]">{copy.studentsSubtitle}</p>
         </div>
       </motion.div>
     </motion.div>

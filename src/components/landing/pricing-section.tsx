@@ -1,63 +1,28 @@
 import { Check, ChevronDown, Lock } from "lucide-react";
 import Link from "next/link";
 
+import type { LandingCopy } from "@/components/landing/content";
+
 type Plan = {
   name: string;
   description: string;
   price: string;
   highlighted?: boolean;
   badge?: string;
-  features: string[];
+  features: ReadonlyArray<string>;
 };
 
-const plans: Plan[] = [
-  {
-    name: "Essencial",
-    description:
-      "Para advogados estruturando o escritório e a presença digital.",
-    price: "199",
-    features: [
-      "Prévias dos cursos (2-3 aulas)",
-      "Templates e modelos básicos",
-      "Comunidade ESC",
-      "Todas as PrevExperience virtuais",
-      "Gravação por 30 dias",
-      "10% de desconto nos presenciais",
-    ],
-  },
-  {
-    name: "Profissional",
-    description: "Para quem quer formação + presença digital",
-    price: "349",
-    highlighted: true,
-    badge: "Mais popular",
-    features: [
-      "Módulo 1 completo de cada curso",
-      "Biblioteca completa de templates",
-      "1 livro digital anual",
-      "Live exclusiva mensal",
-      "Branding completo + posicionamento",
-      "Gravação por 60 dias",
-      "20% de desconto nos presenciais",
-    ],
-  },
-  {
-    name: "Premium",
-    description: "O ecossistema ESC completo, com máxima visibilidade",
-    price: "499",
-    features: [
-      "Acesso total a todo o conteúdo",
-      "2 livros anuais (digital + físico)",
-      "Acesso antecipado às vagas",
-      "2 lives por mês + arquivo",
-      "Gravação permanente na plataforma",
-      "PrevExperience presencial inclusa*",
-      "50% no Summit · 30% presenciais",
-    ],
-  },
-];
+type PricingSectionProps = {
+  copy: LandingCopy["pricing"];
+};
 
-function PlanCard({ plan }: { plan: Plan }) {
+function PlanCard({
+  plan,
+  copy,
+}: {
+  plan: Plan;
+  copy: LandingCopy["pricing"];
+}) {
   return (
     <article
       className={`relative rounded-[24px] border bg-white px-5 py-5 shadow-[0_12px_30px_rgba(17,23,47,0.04)] sm:px-6 sm:py-6 ${
@@ -82,13 +47,13 @@ function PlanCard({ plan }: { plan: Plan }) {
 
       <div className="mt-5 flex items-end gap-1.5">
         <span className="text-base font-semibold text-[var(--muted-foreground)]">
-          R$
+          {copy.currencySymbol}
         </span>
         <span className="section-title text-[3rem] font-extrabold leading-none tracking-[-0.06em] text-[var(--foreground)]">
           {plan.price}
         </span>
         <span className="mb-1 text-sm font-semibold text-[var(--muted-foreground)]">
-          /mês
+          {copy.priceSuffix}
         </span>
       </div>
 
@@ -101,7 +66,7 @@ function PlanCard({ plan }: { plan: Plan }) {
               : "border border-[rgba(17,23,47,0.10)] bg-[#fafbfe] text-[var(--foreground)]/85 hover:bg-[#f2f4fb]"
           }`}
         >
-          Assinar
+          {copy.subscribeCta}
         </Link>
       </div>
 
@@ -120,28 +85,27 @@ function PlanCard({ plan }: { plan: Plan }) {
   );
 }
 
-export function PricingSection() {
+export function PricingSection({ copy }: PricingSectionProps) {
   return (
     <section id="planos" className="bg-[#f5f6fa] py-20 sm:py-24 lg:py-28">
       <div className="container-shell">
         <div className="mx-auto max-w-[760px] text-center">
           <p className="text-xs font-bold uppercase tracking-[0.3em] text-[var(--primary)]">
-            Planos e Assinatura
+            {copy.eyebrow}
           </p>
 
-          <h2 className="section-title mt-4 text-[2.45rem] font-extrabold leading-[1.02] tracking-[-0.06em] text-[var(--foreground)] sm:text-[3.2rem] lg:text-[3.95rem]">
-            Pagar avulso e perder dinheiro
+          <h2 className="section-title mt-4 text-[2.45rem] font-extrabold leading-[1.02] tracking-[-0.06em] text-[var(--foreground)] whitespace-pre-line sm:text-[3.2rem] lg:text-[3.95rem]">
+            {copy.title}
           </h2>
 
           <p className="mx-auto mt-4 max-w-[720px] text-base leading-7 text-[var(--muted-foreground)] sm:text-lg">
-            A assinatura centraliza sua evolução, protege seu preço e reduz
-            seus custos de operação.
+            {copy.description}
           </p>
         </div>
 
         <div className="mx-auto mt-12 grid max-w-[980px] gap-4 md:grid-cols-3 md:gap-5">
-          {plans.map((plan) => (
-            <PlanCard key={plan.name} plan={plan} />
+          {copy.plans.map((plan) => (
+            <PlanCard key={plan.name} plan={plan} copy={copy} />
           ))}
         </div>
 
@@ -152,11 +116,10 @@ export function PricingSection() {
             </div>
             <div>
               <p className="text-sm font-semibold text-[var(--foreground)]">
-                Trava de preço vitalícia
+                {copy.lifetimePriceLockTitle}
               </p>
               <p className="mt-1 text-[12px] leading-5 text-[var(--muted-foreground)]">
-                Membros fundadores nunca sofrem reajuste enquanto o plano
-                estiver ativo.
+                {copy.lifetimePriceLockDescription}
               </p>
             </div>
           </div>
@@ -167,7 +130,7 @@ export function PricingSection() {
             type="button"
             className="inline-flex items-center gap-2 rounded-full border border-[var(--primary)] bg-transparent px-5 py-3 text-sm font-semibold text-[var(--primary)] transition hover:bg-[rgba(46,79,190,0.05)]"
           >
-            Comparar todos os benefícios
+            {copy.compareBenefitsCta}
             <ChevronDown className="h-4 w-4" />
           </button>
         </div>

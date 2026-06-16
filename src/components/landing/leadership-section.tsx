@@ -1,31 +1,18 @@
 import { ImageIcon } from "lucide-react";
 
+import type { LandingCopy } from "@/components/landing/content";
+
 type Leader = {
   name: string;
   role: string;
   description: string;
   placeholder: string;
-  badges: string[];
+  badges: ReadonlyArray<string>;
 };
 
-const leaders: Leader[] = [
-  {
-    name: "Dr. Everson Salem",
-    role: "Fundador · Estratégia & Gestão",
-    description:
-      "Advogado previdenciário e fundador do escritório AMS, referência em SC. Criador do PrevSummit e do Instituto ESC. Traz a visão de quem construiu uma operação escalável e lucrativa.",
-    placeholder: "Foto — Dr. Everson Salem",
-    badges: ["+1.000 processos", "+10 especialistas"],
-  },
-  {
-    name: "Dra. Valeria Lesnik",
-    role: "Especialista · Técnica & Prática",
-    description:
-      "Idealizadora do Pronoia. Garante a profundidade e o rigor jurídico em todas as lives e eventos. Sua atuação diária nos casos mais complexos valida a metodologia ensinada no Instituto.",
-    placeholder: "Foto — Dra. Valeria Lesnik",
-    badges: ["100% foco previdenciário", "AMS · parceiro"],
-  },
-];
+type LeadershipSectionProps = {
+  copy: LandingCopy["leadership"];
+};
 
 function LeaderCard({ leader }: { leader: Leader }) {
   return (
@@ -69,22 +56,22 @@ function LeaderCard({ leader }: { leader: Leader }) {
   );
 }
 
-export function LeadershipSection() {
+export function LeadershipSection({ copy }: LeadershipSectionProps) {
   return (
     <section id="instituto" className="bg-[#f5f6fa] py-20 sm:py-24 lg:py-28">
       <div className="container-shell">
         <div className="mx-auto max-w-[760px] text-center">
           <p className="text-xs font-bold uppercase tracking-[0.3em] text-[var(--primary)]">
-            Liderança e Autoridade
+            {copy.eyebrow}
           </p>
 
           <h2 className="section-title mt-5 text-[2.5rem] font-extrabold leading-[1.02] tracking-[-0.06em] text-[var(--foreground)] sm:text-[3.2rem] lg:text-[4rem]">
-            Quem conduz o Instituto
+            {copy.title}
           </h2>
         </div>
 
         <div className="mt-14 grid gap-6 lg:grid-cols-2 lg:gap-7">
-          {leaders.map((leader) => (
+          {copy.leaders.map((leader) => (
             <LeaderCard key={leader.name} leader={leader} />
           ))}
         </div>

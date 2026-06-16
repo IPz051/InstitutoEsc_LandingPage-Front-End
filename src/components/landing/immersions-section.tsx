@@ -12,6 +12,8 @@ import {
 import Link from "next/link";
 import { useState } from "react";
 
+import type { LandingCopy } from "@/components/landing/content";
+
 type Immersion = {
   number: string;
   title: string;
@@ -24,80 +26,22 @@ type Immersion = {
   status: "open" | "soon";
 };
 
-const immersions: Immersion[] = [
-  {
-    number: "01",
-    title: "Acidente de Trabalho",
-    description:
-      "Reconhecimento, nexo causal e teses de benefícios acidentários na prática.",
-    details:
-      "Uma imersão voltada a casos de acidente de trabalho, com foco em estratégia probatória, construção do nexo causal e conduções práticas para benefícios por incapacidade e demandas acidentárias.",
-    city: "Florianópolis - SC",
-    date: "Mar 2026",
-    duration: "12 horas",
-    seats: "40 vagas",
-    status: "open",
-  },
-  {
-    number: "02",
-    title: "Imersão em Teses Revisionais",
-    description:
-      "Mapeamento e construção das teses revisionais mais relevantes do momento.",
-    details:
-      "Encontro intensivo para identificar oportunidades revisionais, estruturar argumentos consistentes e selecionar as teses com melhor potencial de resultado no contencioso previdenciário atual.",
-    city: "Florianópolis - SC",
-    date: "Mai 2026",
-    duration: "16 horas",
-    seats: "35 vagas",
-    status: "open",
-  },
-  {
-    number: "03",
-    title: "Imersão em Processo Judicial Previdenciário",
-    description:
-      "Da petição inicial à sentença: estratégia processual do início ao fim.",
-    details:
-      "Uma visão completa do processo judicial previdenciário, passando por petição inicial, definição de provas, movimentação processual e posicionamento estratégico em cada etapa do caso.",
-    city: "Curitiba - PR",
-    date: "Jul 2026",
-    duration: "16 horas",
-    seats: "35 vagas",
-    status: "soon",
-  },
-  {
-    number: "04",
-    title: "Imersão Prática em Recurso Extraordinário",
-    description:
-      "Repercussão geral, prequestionamento e a técnica recursal no STF.",
-    details:
-      "Conteúdo direcionado para quem quer dominar a técnica do recurso extraordinário, com ênfase em prequestionamento, filtros de admissibilidade e leitura estratégica de precedentes do STF.",
-    city: "São Paulo - SP",
-    date: "Set 2026",
-    duration: "12 horas",
-    seats: "30 vagas",
-    status: "soon",
-  },
-  {
-    number: "05",
-    title: "Imersão em Mandado de Segurança",
-    description:
-      "Cabimento, liminar e uso estratégico do MS na seara previdenciária.",
-    details:
-      "Imersão prática sobre mandado de segurança em matéria previdenciária, com análise de cabimento, construção de urgência e decisão sobre quando o MS realmente agrega valor à estratégia do caso.",
-    city: "Florianópolis - SC",
-    date: "Nov 2026",
-    duration: "12 horas",
-    seats: "30 vagas",
-    status: "soon",
-  },
-];
+type ImmersionsSectionProps = {
+  copy: LandingCopy["immersions"];
+};
 
-function StatusBadge({ status }: { status: Immersion["status"] }) {
+function StatusBadge({
+  status,
+  copy,
+}: {
+  status: Immersion["status"];
+  copy: LandingCopy["immersions"];
+}) {
   if (status === "open") {
     return (
       <span className="inline-flex items-center gap-1.5 rounded-full bg-[#e6f6ef] px-3 py-1.5 text-[11px] font-bold text-[#1e9d6f]">
         <span className="h-1.5 w-1.5 rounded-full bg-current" />
-        Inscrições abertas
+        {copy.openStatus}
       </span>
     );
   }
@@ -105,7 +49,7 @@ function StatusBadge({ status }: { status: Immersion["status"] }) {
   return (
     <span className="inline-flex items-center gap-1.5 rounded-full bg-[#eceef4] px-3 py-1.5 text-[11px] font-bold text-[#7c879f]">
       <span className="h-1.5 w-1.5 rounded-full bg-current" />
-      Em breve
+      {copy.soonStatus}
     </span>
   );
 }
@@ -128,9 +72,11 @@ function MetaItem({
 function ImmersionCard({
   immersion,
   onOpenInfo,
+  copy,
 }: {
   immersion: Immersion;
   onOpenInfo: (immersion: Immersion) => void;
+  copy: LandingCopy["immersions"];
 }) {
   return (
     <article className="flex h-full flex-col rounded-[22px] border border-[rgba(17,23,47,0.08)] bg-white px-5 py-5 shadow-[0_12px_30px_rgba(17,23,47,0.04)] sm:px-6 sm:py-6">
@@ -138,7 +84,7 @@ function ImmersionCard({
         <p className="section-title text-[2rem] font-extrabold leading-none tracking-[-0.06em] text-transparent [-webkit-text-stroke:1.3px_rgba(91,110,240,0.9)]">
           {immersion.number}
         </p>
-        <StatusBadge status={immersion.status} />
+        <StatusBadge status={immersion.status} copy={copy} />
       </div>
 
       <h3 className="section-title mt-4 max-w-[17rem] text-[1.8rem] font-bold leading-[1] tracking-[-0.05em] text-[var(--foreground)]">
@@ -163,7 +109,7 @@ function ImmersionCard({
           <button
             type="button"
             onClick={() => onOpenInfo(immersion)}
-            aria-label={`Ver mais informações sobre ${immersion.title}`}
+            aria-label={`${copy.infoAriaPrefix} ${immersion.title}`}
             className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[rgba(17,23,47,0.10)] bg-[#fafbfe] text-[var(--foreground)]/85 transition hover:bg-[#f2f4fb] hover:text-[var(--primary)]"
           >
             <Info className="h-4 w-4" />
@@ -173,7 +119,7 @@ function ImmersionCard({
             href="/cadastro"
             className="inline-flex min-w-0 flex-1 items-center justify-center gap-2 rounded-full bg-[var(--primary)] px-5 py-3.5 text-sm font-semibold text-white shadow-[0_16px_34px_rgba(46,79,190,0.20)] transition hover:bg-[#2845a8]"
           >
-            Quero participar
+            {copy.participateCta}
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
@@ -182,7 +128,7 @@ function ImmersionCard({
   );
 }
 
-export function ImmersionsSection() {
+export function ImmersionsSection({ copy }: ImmersionsSectionProps) {
   const [selectedImmersion, setSelectedImmersion] = useState<Immersion | null>(
     null,
   );
@@ -193,25 +139,25 @@ export function ImmersionsSection() {
         <div className="container-shell">
           <div className="mx-auto max-w-[760px] text-center">
             <p className="text-xs font-bold uppercase tracking-[0.3em] text-[var(--primary)]">
-              Cursos Presenciais
+              {copy.eyebrow}
             </p>
 
             <h2 className="section-title mt-4 text-[2.4rem] font-extrabold leading-[1.02] tracking-[-0.06em] text-[var(--foreground)] sm:text-[3.15rem] lg:text-[3.75rem]">
-              Imersões técnicas, ao vivo
+              {copy.title}
             </h2>
 
             <p className="mx-auto mt-5 max-w-[720px] text-base leading-7 text-[var(--muted-foreground)] sm:text-lg">
-              Encontros presenciais conduzidos pelos especialistas do Instituto.
-              Vagas limitadas, networking real e estudo de casos complexos.
+              {copy.description}
             </p>
           </div>
 
           <div className="mt-14 grid gap-4 md:grid-cols-2 xl:grid-cols-3 xl:gap-5">
-            {immersions.map((immersion) => (
+            {copy.items.map((immersion) => (
               <ImmersionCard
                 key={immersion.number}
                 immersion={immersion}
                 onOpenInfo={setSelectedImmersion}
+                copy={copy}
               />
             ))}
           </div>
@@ -224,7 +170,7 @@ export function ImmersionsSection() {
             <button
               type="button"
               onClick={() => setSelectedImmersion(null)}
-              aria-label="Fechar modal"
+              aria-label={copy.closeModalAria}
               className="absolute right-4 top-4 inline-flex h-10 w-10 items-center justify-center rounded-full border border-[rgba(17,23,47,0.08)] text-[var(--muted-foreground)] transition hover:border-[var(--primary)] hover:text-[var(--primary)]"
             >
               <X className="h-4 w-4" />
@@ -232,7 +178,7 @@ export function ImmersionsSection() {
 
             <div className="pr-12">
               <div className="inline-flex rounded-full bg-[#eef2ff] px-3 py-1.5 text-xs font-bold text-[var(--primary)]">
-                Imersão {selectedImmersion.number}
+                {copy.modalPrefix} {selectedImmersion.number}
               </div>
 
               <h3 className="section-title mt-4 text-[2rem] font-bold leading-[1.02] tracking-[-0.05em] text-[var(--foreground)] sm:text-[2.4rem]">
@@ -256,14 +202,14 @@ export function ImmersionsSection() {
                   onClick={() => setSelectedImmersion(null)}
                   className="inline-flex items-center justify-center rounded-full border border-[rgba(17,23,47,0.10)] px-5 py-3 text-sm font-semibold text-[var(--foreground)] transition hover:bg-[#f7f8fc]"
                 >
-                  Fechar
+                  {copy.closeButton}
                 </button>
 
                 <Link
                   href="/cadastro"
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--primary)] px-5 py-3 text-sm font-semibold text-white shadow-[0_16px_34px_rgba(46,79,190,0.20)] transition hover:bg-[#2845a8]"
                 >
-                  Quero participar
+                  {copy.participateCta}
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>

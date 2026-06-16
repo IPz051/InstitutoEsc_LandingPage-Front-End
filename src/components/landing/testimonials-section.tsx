@@ -1,7 +1,9 @@
 "use client";
 
 import { ChevronLeft, ChevronRight, Quote, Star } from "lucide-react";
-import { useMemo, useState } from "react";
+import { useState } from "react";
+
+import type { LandingCopy } from "@/components/landing/content";
 
 type Testimonial = {
   author: string;
@@ -10,37 +12,14 @@ type Testimonial = {
   result: string;
 };
 
-const testimonials: Testimonial[] = [
-  {
-    author: "Dra. Mariana Costa",
-    role: "Advogada Previdenciarista · São Paulo",
-    quote:
-      "O Instituto ESC me ajudou a transformar uma rotina desorganizada em um escritório com processo, posicionamento e previsibilidade de crescimento.",
-    result: "Mais clareza comercial e operação mais enxuta em 90 dias.",
-  },
-  {
-    author: "Dr. Rafael Nogueira",
-    role: "Sócio de escritório · Belo Horizonte",
-    quote:
-      "Passei a enxergar a prática previdenciária como negócio. Os módulos de tecnologia e comercial mudaram completamente minha forma de atender e escalar.",
-    result: "Melhor conversão de leads e mais segurança nas decisões.",
-  },
-  {
-    author: "Dra. Juliana Mota",
-    role: "Especialista em benefícios · Recife",
-    quote:
-      "A combinação entre comunidade, conteúdo e método trouxe aplicação imediata. Não é teoria solta, é repertório para usar no dia seguinte.",
-    result: "Mais autoridade digital e atendimento mais consistente.",
-  },
-];
+type TestimonialsSectionProps = {
+  copy: LandingCopy["testimonials"];
+};
 
-export function TestimonialsSection() {
+export function TestimonialsSection({ copy }: TestimonialsSectionProps) {
+  const testimonials: ReadonlyArray<Testimonial> = copy.items;
   const [activeIndex, setActiveIndex] = useState(0);
-
-  const activeTestimonial = useMemo(
-    () => testimonials[activeIndex] ?? testimonials[0],
-    [activeIndex],
-  );
+  const activeTestimonial = testimonials[activeIndex] ?? testimonials[0];
 
   function handlePrevious() {
     setActiveIndex((current) =>
@@ -59,16 +38,15 @@ export function TestimonialsSection() {
       <div className="container-shell">
         <div className="mx-auto max-w-[760px] text-center">
           <p className="text-xs font-bold uppercase tracking-[0.3em] text-[var(--primary)]">
-            Depoimentos
+            {copy.eyebrow}
           </p>
 
           <h2 className="section-title mt-4 text-[2.45rem] font-extrabold leading-[1.02] tracking-[-0.06em] text-[var(--foreground)] sm:text-[3.2rem] lg:text-[3.95rem]">
-            Quem vive a experiência ESC
+            {copy.title}
           </h2>
 
           <p className="mx-auto mt-4 max-w-[720px] text-base leading-7 text-[var(--muted-foreground)] sm:text-lg">
-            Resultados percebidos por advogados que escolheram evoluir com
-            método, comunidade e aplicação prática.
+            {copy.description}
           </p>
         </div>
 
@@ -124,7 +102,7 @@ export function TestimonialsSection() {
                   <button
                     type="button"
                     onClick={handlePrevious}
-                    aria-label="Depoimento anterior"
+                    aria-label={copy.previousAria}
                     className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[rgba(17,23,47,0.10)] text-[var(--foreground)] transition hover:border-[var(--primary)] hover:text-[var(--primary)]"
                   >
                     <ChevronLeft className="h-4 w-4" />
@@ -133,7 +111,7 @@ export function TestimonialsSection() {
                   <button
                     type="button"
                     onClick={handleNext}
-                    aria-label="Próximo depoimento"
+                    aria-label={copy.nextAria}
                     className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[rgba(17,23,47,0.10)] text-[var(--foreground)] transition hover:border-[var(--primary)] hover:text-[var(--primary)]"
                   >
                     <ChevronRight className="h-4 w-4" />
@@ -153,7 +131,7 @@ export function TestimonialsSection() {
 
               <div className="mt-8 rounded-[20px] bg-[#f7f8fc] px-5 py-4">
                 <p className="text-xs font-bold uppercase tracking-[0.18em] text-[var(--primary)]">
-                  Resultado percebido
+                  {copy.resultLabel}
                 </p>
                 <p className="mt-2 text-sm leading-6 text-[var(--muted-foreground)] sm:text-[15px]">
                   {activeTestimonial.result}

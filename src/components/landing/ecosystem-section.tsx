@@ -8,6 +8,8 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 
+import type { LandingCopy } from "@/components/landing/content";
+
 type EcosystemCard = {
   title: string;
   description: string;
@@ -16,47 +18,21 @@ type EcosystemCard = {
   className?: string;
 };
 
-const ecosystemCards: EcosystemCard[] = [
-  {
-    title: "Instituto ESC",
-    description: "O novo ecossistema do Direito Previdenciário",
-    icon: LayoutGrid,
-    featured: true,
-    className: "md:col-span-1 md:row-span-2",
-  },
-  {
-    title: "Plataforma",
-    description: "Membros, prévias, biblioteca e comunidade.",
-    icon: LayoutGrid,
-  },
-  {
-    title: "Cursos presenciais",
-    description: "5 imersões técnicas por ano.",
-    icon: UsersRound,
-  },
-  {
-    title: "PrevExperience",
-    description: "Mesas redondas, virtual e presencial.",
-    icon: MonitorPlay,
-  },
-  {
-    title: "Prev Summit",
-    description: "O maior evento do ano, em abril.",
-    icon: Stars,
-  },
-  {
-    title: "Metis / Pronoia",
-    description: "Sistema de gestão do escritório.",
-    icon: ShieldCheck,
-  },
-  {
-    title: "AMS Advocacia",
-    description: "A metodologia validada na prática.",
-    icon: BookOpenText,
-  },
-];
+const cardIcons = [
+  LayoutGrid,
+  LayoutGrid,
+  UsersRound,
+  MonitorPlay,
+  Stars,
+  ShieldCheck,
+  BookOpenText,
+] as const;
 
-function FeaturedCard() {
+type EcosystemSectionProps = {
+  copy: LandingCopy["ecosystem"];
+};
+
+function FeaturedCard({ title, description }: Pick<EcosystemCard, "title" | "description">) {
   return (
     <article className="flex min-h-[220px] rounded-[24px] bg-[linear-gradient(135deg,#3657cc_0%,#4d63df_100%)] p-8 text-white shadow-[0_20px_50px_rgba(46,79,190,0.18)] md:min-h-[336px] md:p-10">
       <div className="flex flex-1 flex-col justify-center">
@@ -69,11 +45,11 @@ function FeaturedCard() {
         />
 
         <h3 className="section-title mt-7 text-[1.85rem] font-semibold tracking-[-0.04em] md:text-[2rem]">
-          Instituto ESC
+          {title}
         </h3>
 
         <p className="mt-3 max-w-[18rem] text-sm leading-6 text-white/86 md:text-[15px]">
-          O Novo Ecossistema do Direito Previdenciário
+          {description}
         </p>
       </div>
     </article>
@@ -98,24 +74,26 @@ function DefaultCard({ title, description, icon: Icon }: EcosystemCard) {
   );
 }
 
-export function EcosystemSection() {
+export function EcosystemSection({ copy }: EcosystemSectionProps) {
+  const ecosystemCards: EcosystemCard[] = copy.cards.map((card, index) => ({
+    ...card,
+    icon: cardIcons[index],
+  }));
+
   return (
     <section id="estrutura" className="bg-[#f5f6fa] py-20 sm:py-24 lg:py-28">
       <div className="container-shell">
         <div className="mx-auto max-w-[700px] text-center">
           <p className="text-xs font-bold uppercase tracking-[0.28em] text-[var(--primary)]">
-            A Estrutura
+            {copy.eyebrow}
           </p>
 
-          <h2 className="section-title mt-4 text-[2.3rem] font-extrabold leading-[1.02] tracking-[-0.05em] text-[var(--foreground)] sm:text-[3.15rem]">
-            Um ecossistema, não um curso
-            <br className="hidden sm:block" />
-            avulso
+          <h2 className="section-title mt-4 text-[2.3rem] font-extrabold leading-[1.02] tracking-[-0.05em] text-[var(--foreground)] whitespace-pre-line sm:text-[3.15rem]">
+            {copy.title}
           </h2>
 
           <p className="mx-auto mt-5 max-w-[620px] text-base leading-7 text-[var(--muted-foreground)] sm:text-lg">
-            Tudo converge para a plataforma central. Formação, prática e
-            comunidade alimentam um ciclo contínuo de evolução.
+            {copy.description}
           </p>
         </div>
 
@@ -123,7 +101,7 @@ export function EcosystemSection() {
           {ecosystemCards.map((card) =>
             card.featured ? (
               <div key={card.title} className={card.className}>
-                <FeaturedCard />
+                <FeaturedCard title={card.title} description={card.description} />
               </div>
             ) : (
               <DefaultCard key={card.title} {...card} />

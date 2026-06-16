@@ -1,25 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const ecosystemLinks = [
-  { label: "Plataforma", href: "#estrutura" },
-  { label: "Cursos presenciais", href: "#cursos" },
-  { label: "PrevExperience", href: "#cursos" },
-  { label: "Prev Summit", href: "#cursos" },
-  { label: "Metis", href: "#estrutura" },
-  { label: "AMS Advocacia", href: "#instituto" },
-];
-
-const courseLinks = [
-  { label: "Cursos presenciais", href: "#cursos" },
-  { label: "Formação", href: "#formacao" },
-  { label: "Planos", href: "#planos" },
-  { label: "Área do Aluno", href: "#area-do-aluno" },
-];
+import type { LandingCopy } from "@/components/landing/content";
 
 type FooterColumnProps = {
   title: string;
-  links: Array<{ label: string; href: string }>;
+  links: ReadonlyArray<{ label: string; href: string }>;
 };
 
 function FooterColumn({ title, links }: FooterColumnProps) {
@@ -45,7 +31,11 @@ function FooterColumn({ title, links }: FooterColumnProps) {
   );
 }
 
-export function Footer() {
+type FooterProps = {
+  copy: LandingCopy["footer"];
+};
+
+export function Footer({ copy }: FooterProps) {
   return (
     <footer className="bg-[#0d1530] text-white">
       <div className="container-shell py-14 sm:py-16 lg:py-18">
@@ -60,18 +50,18 @@ export function Footer() {
             />
 
             <p className="mt-8 text-xl leading-9 text-white/68">
-              O Novo Ecossistema do Direito Previdenciário
+              {copy.description}
             </p>
           </div>
 
-          <FooterColumn title="Ecossistema" links={ecosystemLinks} />
-          <FooterColumn title="Cursos" links={courseLinks} />
+          <FooterColumn title={copy.ecosystemTitle} links={copy.ecosystemLinks} />
+          <FooterColumn title={copy.courseTitle} links={copy.courseLinks} />
         </div>
 
         <div className="mt-14 border-t border-white/10 pt-6">
           <div className="flex flex-col gap-4 text-[1.05rem] text-white/58 sm:flex-row sm:items-center sm:justify-between">
-            <p>© 2026 Instituto ESC. Todos os direitos reservados.</p>
-            <p>Florianópolis - SC</p>
+            <p>{copy.copyright}</p>
+            <p>{copy.location}</p>
           </div>
         </div>
       </div>
