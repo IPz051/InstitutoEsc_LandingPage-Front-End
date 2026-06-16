@@ -30,7 +30,7 @@ export function FinalCtaSection() {
                 href="/cadastro"
                 className="inline-flex min-w-[240px] items-center justify-center gap-3 rounded-full bg-white px-8 py-4 text-lg font-semibold text-[var(--primary)] transition hover:bg-[#f4f7ff]"
               >
-                Fazer cadastro
+                Quero Participar
                 <ArrowRight className="h-5 w-5" />
               </Link>
 
