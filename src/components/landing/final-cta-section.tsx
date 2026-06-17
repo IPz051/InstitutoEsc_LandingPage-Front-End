@@ -14,13 +14,6 @@ export function FinalCtaSection({ copy }: FinalCtaSectionProps) {
       <div className="container-shell">
         <div className="mx-auto max-w-[1160px] rounded-[32px] bg-[linear-gradient(135deg,#2f4fbe_0%,#4460d5_52%,#6175ef_100%)] px-6 py-16 text-center shadow-[0_26px_70px_rgba(46,79,190,0.22)] sm:px-10 sm:py-20 lg:px-14 lg:py-24">
           <div className="mx-auto max-w-[760px]">
-            <Image
-              src="/final-cta-logo-white.png"
-              alt="Instituto ESC"
-              width={540}
-              height={540}
-              className="mx-auto h-16 w-auto sm:h-20"
-            />
 
             <h2 className="section-title mx-auto mt-8 max-w-[760px] text-[2.5rem] font-extrabold leading-[0.98] tracking-[-0.06em] text-white sm:text-[3.7rem] lg:text-[4.8rem]">
               {copy.title}
@@ -41,7 +34,7 @@ export function FinalCtaSection({ copy }: FinalCtaSectionProps) {
 
               <Link
                 href="#planos"
-                className="inline-flex min-w-[240px] items-center justify-center rounded-full border border-white/45 bg-transparent px-8 py-4 text-lg font-semibold text-white transition hover:bg-white/8"
+                className="inline-flex min-w-[240px] items-center justify-center rounded-full border border-white/45 bg-transparent px-8 py-4 text-lg font-semibold !text-white transition hover:bg-white/8 hover:!text-white visited:!text-white"
               >
                 {copy.secondaryCta}
               </Link>

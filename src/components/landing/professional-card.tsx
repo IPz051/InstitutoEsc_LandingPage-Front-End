@@ -7,6 +7,9 @@ export type ProfessionalCardData = {
   description: string;
   imageSrc?: string;
   imageAlt?: string;
+  imageClassName?: string;
+  imageScale?: number;
+  imagePosition?: string;
   highlights?: ReadonlyArray<string>;
 };
 
@@ -28,7 +31,13 @@ export function ProfessionalCard({
             alt={professional.imageAlt ?? professional.name}
             fill
             sizes="(max-width: 768px) 100vw, 33vw"
-            className="object-cover"
+            className={`object-cover ${professional.imageClassName ?? ""}`}
+            style={{
+              objectPosition: professional.imagePosition,
+              transform: professional.imageScale
+                ? `scale(${professional.imageScale})`
+                : undefined,
+            }}
           />
         ) : (
           <div className="absolute inset-0 flex items-center justify-center">

@@ -105,19 +105,20 @@ function ImmersionCard({
       </div>
 
       <div className="mt-auto border-t border-[rgba(17,23,47,0.08)] pt-5">
-        <div className="flex items-center gap-3">
+        <div className="flex flex-col gap-3">
           <button
             type="button"
             onClick={() => onOpenInfo(immersion)}
             aria-label={`${copy.infoAriaPrefix} ${immersion.title}`}
-            className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[rgba(17,23,47,0.10)] bg-[#fafbfe] text-[var(--foreground)]/85 transition hover:bg-[#f2f4fb] hover:text-[var(--primary)]"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#2E4FBE33] px-5 py-3.5 text-sm font-semibold text-[var(--primary)] shadow-none transition hover:bg-[#2E4FBE40]"
           >
             <Info className="h-4 w-4" />
+            Informações do curso
           </button>
 
           <Link
             href="/cadastro"
-            className="inline-flex min-w-0 flex-1 items-center justify-center gap-2 rounded-full bg-[var(--primary)] px-5 py-3.5 text-sm font-semibold text-white shadow-[0_16px_34px_rgba(46,79,190,0.20)] transition hover:bg-[#2845a8]"
+            className="inline-flex min-w-0 w-full items-center justify-center gap-2 rounded-full bg-[var(--primary)] px-5 py-3.5 text-sm font-semibold !text-white shadow-[0_16px_34px_rgba(46,79,190,0.20)] transition hover:bg-[#2845a8] hover:!text-white visited:!text-white"
           >
             {copy.participateCta}
             <ArrowRight className="h-4 w-4" />

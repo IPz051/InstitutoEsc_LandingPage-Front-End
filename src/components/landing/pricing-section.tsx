@@ -1,4 +1,4 @@
-import { Check, ChevronDown, Lock } from "lucide-react";
+import { Check, Lock } from "lucide-react";
 import Link from "next/link";
 
 import type { LandingCopy } from "@/components/landing/content";
@@ -123,16 +123,6 @@ export function PricingSection({ copy }: PricingSectionProps) {
               </p>
             </div>
           </div>
-        </div>
-
-        <div className="mt-6 flex justify-center">
-          <button
-            type="button"
-            className="inline-flex items-center gap-2 rounded-full border border-[var(--primary)] bg-transparent px-5 py-3 text-sm font-semibold text-[var(--primary)] transition hover:bg-[rgba(46,79,190,0.05)]"
-          >
-            {copy.compareBenefitsCta}
-            <ChevronDown className="h-4 w-4" />
-          </button>
         </div>
       </div>
     </section>

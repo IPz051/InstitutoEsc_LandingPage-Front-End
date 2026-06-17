@@ -1,7 +1,8 @@
 "use client";
 
-import { ArrowRight, CircleDot } from "lucide-react";
-import { useMemo, useState } from "react";
+import { ArrowRight } from "lucide-react";
+import Image from "next/image";
+import { useState } from "react";
 
 import type { LandingCopy } from "@/components/landing/content";
 
@@ -11,11 +12,6 @@ type PostgraduateSectionProps = {
 
 export function PostgraduateSection({ copy }: PostgraduateSectionProps) {
   const [activeModuleId, setActiveModuleId] = useState<string>(copy.modules[0].id);
-
-  const activeModule = useMemo(
-    () => copy.modules.find((item) => item.id === activeModuleId) ?? copy.modules[0],
-    [activeModuleId, copy.modules],
-  );
 
   return (
     <section id="formacao" className="bg-[#f5f6fa] py-20 sm:py-24 lg:py-28">
@@ -57,7 +53,7 @@ export function PostgraduateSection({ copy }: PostgraduateSectionProps) {
             <div className="rounded-[24px] bg-[#fbfbfd] p-3 sm:p-4">
               <div className="space-y-2">
                 {copy.modules.map((module) => {
-                  const isActive = module.id === activeModule.id;
+                  const isActive = module.id === activeModuleId;
 
                   return (
                     <button
@@ -90,45 +86,14 @@ export function PostgraduateSection({ copy }: PostgraduateSectionProps) {
               </div>
             </div>
 
-            <div className="rounded-[24px] bg-[#fcfcfe] px-5 py-5 sm:px-6 sm:py-6 lg:px-7">
-              <div className="inline-flex rounded-full bg-[var(--primary)] px-3 py-1.5 text-xs font-bold text-white">
-                {copy.modulePrefix} {activeModule.id}
-              </div>
-
-              <h3 className="section-title mt-4 text-[2.2rem] font-bold tracking-[-0.05em] text-[var(--foreground)]">
-                {activeModule.name}
-              </h3>
-
-              <p className="mt-2 text-[15px] leading-7 text-[var(--muted-foreground)]">
-                {activeModule.description}
-              </p>
-
-              <div className="mt-6 border-t border-[rgba(17,23,47,0.08)]">
-                {activeModule.lessons.map((lesson) => (
-                  <div
-                    key={lesson.title}
-                    className="flex items-center justify-between gap-4 border-b border-[rgba(17,23,47,0.08)] py-4"
-                  >
-                    <div className="flex items-center gap-3">
-                      <CircleDot className="h-4 w-4 text-[var(--primary)]" />
-                      <span className="text-sm font-medium text-[var(--foreground)]">
-                        {lesson.title}
-                      </span>
-                    </div>
-                    <span className="text-xs font-semibold text-[var(--muted-foreground)]">
-                      {lesson.duration}
-                    </span>
-                  </div>
-                ))}
-              </div>
-
-              <button
-                type="button"
-                className="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-[var(--primary)] px-6 py-3.5 text-sm font-semibold text-white shadow-[0_16px_34px_rgba(46,79,190,0.20)] transition hover:bg-[#2845a8]"
-              >
-                {copy.cta}
-                <ArrowRight className="h-4 w-4" />
-              </button>
+            <div className="overflow-hidden rounded-[24px] bg-[#fcfcfe]">
+              <Image
+                src="/BG - Formação.png"
+                alt="Banner da Formacao ESC"
+                width={1024}
+                height={576}
+                className="h-full w-full object-cover"
+              />
             </div>
           </div>
         </div>

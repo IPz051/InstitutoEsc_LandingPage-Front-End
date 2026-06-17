@@ -42,12 +42,12 @@ export const landingContent = {
     },
     ecosystem: {
       eyebrow: "A Estrutura",
-      title: "Um ecossistema, não um curso\navulso",
+      title: "Um ecossistema,\nnão um curso avulso",
       description:
         "Tudo converge para a plataforma central. Formação, prática e comunidade alimentam um ciclo contínuo de evolução.",
       cards: [
         {
-          title: "Instituto ESC",
+          title: "",
           description: "O novo ecossistema do Direito Previdenciário",
           featured: true,
           className: "md:col-span-1 md:row-span-2",
@@ -87,6 +87,7 @@ export const landingContent = {
           role: "Fundador · Estratégia & Gestão",
           description:
             "Advogado previdenciário e fundador do escritório AMS, referência em SC. Criador do PrevSummit e do Instituto ESC. Traz a visão de quem construiu uma operação escalável e lucrativa.",
+          imageSrc: "/Professores/Eversom.png",
           placeholder: "Foto - Dr. Everson Salem",
           badges: ["+1.000 processos", "+10 especialistas"],
         },
@@ -95,6 +96,7 @@ export const landingContent = {
           role: "Especialista · Técnica & Prática",
           description:
             "Idealizadora do Pronoia. Garante a profundidade e o rigor jurídico em todas as lives e eventos. Sua atuação diária nos casos mais complexos valida a metodologia ensinada no Instituto.",
+          imageSrc: "/Professores/valeria.jpg",
           placeholder: "Foto - Dra. Valeria Lesnik",
           badges: ["100% foco previdenciário", "AMS · parceiro"],
         },
@@ -266,7 +268,7 @@ export const landingContent = {
       eyebrow: "Professores",
       title: "Quem vai conduzir as aulas",
       description:
-        "Oito professores com experiência prática para acelerar sua evolução, aprofundar sua técnica e fortalecer sua autoridade.",
+        "Nove professores com experiência prática para acelerar sua evolução, aprofundar sua técnica e fortalecer sua autoridade.",
       previousAria: "Professores anteriores",
       nextAria: "Próximos professores",
       paginationAriaPrefix: "Ir para grupo",
@@ -274,66 +276,102 @@ export const landingContent = {
       imageFallbackLabel: "Foto do professor",
       items: [
         {
-          name: "Professor 01",
-          role: "Especialista · Estratégia e Operação",
+          name: "Carlos Alberto Pereira de Castro",
+          imageSrc: "/9-professores/carlos-alberto-pereira-de-castro.png",
+          imageAlt: "Carlos Alberto Pereira de Castro",
+          imageScale: 1,
+          role: "",
           description:
-            "Conduz os encontros com foco em método, clareza e aplicação real. Traz visão de operação para estruturar uma rotina escalável no escritório previdenciário.",
-          highlights: ["Estratégia", "Operação", "Método"],
+            "Diretor de Relacionamento com o Direito do Trabalho do IBDP. Juiz do Trabalho da 12ª Região-SC. Doutorando em Ciências Jurídicas pela Universidade Autónoma de Lisboa. Manual de Direito Previdenciário, 29 ed. Forense, 2026, Prática Processual Previdenciária, 18 ed. Forense, 2026, dentre outras.",
+          highlights:[""],
         },
         {
-          name: "Professor 02",
-          role: "Especialista · Técnica e Prática",
-          description:
-            "Responsável por aprofundar o raciocínio jurídico e a prática diária. Conecta os fundamentos com casos reais e padrões de decisão para elevar a confiança técnica.",
-          highlights: ["Teses", "Processo", "Casos complexos"],
+          name: "João Batista Lazzari",
+          imageSrc: "/9-professores/joao-batista-lazzari.png",
+          imageAlt: "João Batista Lazzari",
+          imagePosition:"50% 25%",
+          role: "",
+          description:    
+            "Diretor de Processo Judicial Previdenciário do IBDP. Pós-doutor em Direito e Justiça Constitucional. Juiz Federal do TRF da 4ª Região (1996-2023). Coautor das obras: Manual de Direito Previdenciário, 29 ed. Forense, 2026, Prática Processual Previdenciária, 18 ed. Forense, 2026, dentre outras.",
+          highlights:[""],
         },
         {
-          name: "Professor 03",
-          role: "Especialista · Crescimento e Autoridade",
+          name: "Lucas Alberton",
+          imageSrc: "/9-professores/lucas-alberton.png",
+          imageAlt: "Lucas Alberton",
+          imageScale: 1,
+          imagePosition:"50% 10%",
+          role: "",
           description:
-            "Trabalha posicionamento, comunicação e experiência do cliente. Mostra como transformar consistência em autoridade, sem perder a excelência técnica.",
-          highlights: ["Posicionamento", "Autoridade", "Conversão"],
+            "Advogado previdenciarista. Mestre em Direito. Especialista em Direito Previdenciário. Professor de Direito Processual Civil, Direito Previdenciário e Ética Profissional na graduação e em diversos institutos de pós-graduação.",
+          highlights: [""],
         },
         {
-          name: "Professor 04",
-          role: "Especialista · Benefícios por Incapacidade",
+          name: "Marco Aurélio Serau Junior",
+          imageSrc: "/9-professores/marco-aurilio-serau-junior.png",
+          imageAlt: "Marco Aurélio Serau Junior",
+          imagePosition:"50% 10%",
+          role: "",
           description:
-            "Atua com foco em estratégia técnico-probatória para casos de incapacidade, articulando documentação médica, perícia e narrativa processual com mais segurança.",
-          highlights: ["Perícia", "Incapacidade", "Prova"],
+            "Professor da UFPR (Universidade Federal do Paraná). Doutor e mestre pela USP. Advogado e consultor. Ex-assessor na Vice-Presidência do Tribunal Regional Federal da 3ª Região. Autor e coordenador de dezenas de obras jurídicas. Diretor científico do IEPREV.",
+          highlights: [],
         },
         {
-          name: "Professor 05",
-          role: "Especialista · Revisões e Cálculos",
+          name: "Rafael Campos de Oliveira",
+          imageSrc: "/9-professores/rafael-campos-de-oliveira.png",
+          imageAlt: "Rafael Campos de Oliveira",
+          imagePosition:"50% 25%",
+          role: "", 
           description:
-            "Aprofunda o olhar sobre oportunidades revisionais, leitura de cartas de concessão e uso prático de cálculos para embasar teses com maior consistência.",
-          highlights: ["Revisões", "Cálculos", "Análise"],
+            "Advogado e Professor Especialista em Processo Civil Presidente da Comissão de Direito do Servidor Público da OAB/SC Membro da Comissão de Direito Previdenciário - Regime Próprio da OAB/SC",
+          highlights: [],
         },
         {
-          name: "Professor 06",
-          role: "Especialista · Gestão e Processos",
+          name: "Thaiana Nunes",
+          imageSrc: "/9-professores/thaiana-nunes.png",
+          imageAlt: "Thaiana Nunes",
+          imagePosition:"50% 15%",
+          role: "",   
           description:
-            "Ajuda a estruturar fluxos internos, organização da equipe e padrões operacionais para ganhar produtividade sem comprometer a experiência do cliente.",
-          highlights: ["Gestão", "Fluxos", "Produtividade"],
+            "Advogada Previdenciarista, associada ao escritório Ayres Monteiro & Salem. Graduada pela Faculdade Cenecista de Joinville, realizou expansão universitária na Universidade de San Diego, Califórnia. Especialista em Direito Previdenciário e Tributário. Membra da Comissão de Direito Previdenciário do Regime Geral da Previdência Social da OAB/SC.",
+          highlights: [],
         },
         {
-          name: "Professor 07",
-          role: "Especialista · Conteúdo e Marca",
+          name: "Bruna Correia Ortiz: ",
+          imageSrc: "/9-professores/bruna-correia-ortiz.png",
+          imageAlt: "Bruna Correia Ortiz",
+          imagePosition:"50% 10%",
+          role: "",     
           description:
-            "Mostra como construir autoridade com comunicação clara, conteúdo estratégico e posicionamento coerente para gerar lembrança e aumentar a percepção de valor.",
-          highlights: ["Marca", "Conteúdo", "Autoridade"],
+            "Advogada, ex-conselheira do Conselho de Recursos da Previdência Social- CRPS. Mestranda em Ciência Jurídica. Pós-Graduada: especialista em Direito Previdenciário e Direito Processual Civil. Palestrante, professora de pós-graduações e cursos no âmbito do Direito Previdenciário. Coordenadora regional do IEPREV no estado de Santa Catarina. Integrante da Comissão de Direito Previdenciário RGPS da Seccional de Florianópolis/SC.",
+          highlights: [],
         },
         {
-          name: "Professor 08",
-          role: "Especialista · Tecnologia e IA",
+          name: "Theodoro Agostinho",
+          imageSrc: "/9-professores/theodoro-agostinho.png",
+          imageAlt: "Theodoro Agostinho",
+          imagePosition:"50% 27%",
+          role: "",       
           description:
-            "Explora ferramentas digitais, automações e IA aplicada ao escritório para acelerar análises, reduzir retrabalho e ampliar capacidade operacional.",
+            "Pós-Doutor em Direitos Humanos, Saúde e Justiça pelo Ius Gentium Conimbrigae – Universidade de Coimbra, Portugal. Doutor e Mestre em Direito Previdenciário pela Pontifícia Universidade Católica de São Paulo (PUC/SP).Graduação em Direito pela Universidade de Sorocaba (UNISO).Especialista em Direito Previdenciário pela EPD/SP. Autor de diversas obras em Direito Previdenciário.",
           highlights: ["IA", "Automação", "Tecnologia"],
+        },
+        {
+          name: "Marcela Cunha",
+          imageSrc: "/9-professores/marcela-cunha.png",
+          imageAlt: "Marcela Cunha",
+          imagePosition:"50% 30%",
+
+          role: "",
+          description:
+            "Advogada previdenciarista, empresária e palestrante. Pós-graduada em Direito Previdenciário e Processo Civil. Sócia da Koetz Advocacia, o primeiro escritório 100% digital do Brasil, com atuação nacional e internacional.Professora e palestrante em cursos e congressos jurídicos nas áreas de Direito Previdenciário, gestão de escritórios, comercial jurídico, automação e inteligência artificial aplicada à advocacia.",
+          highlights: [],
         },
       ],
     },
     testimonials: {
       eyebrow: "Depoimentos",
-      title: "Quem vive a experiência ESC",
+      title: "Quem vive a\nexperiência ESC",
       description:
         "Resultados percebidos por advogados que escolheram evoluir com método, comunidade e aplicação prática.",
       previousAria: "Depoimento anterior",
@@ -539,6 +577,7 @@ export const landingContent = {
           role: "Founder · Strategy & Management",
           description:
             "A social security lawyer and founder of AMS Law Firm, a benchmark in Santa Catarina. Creator of PrevSummit and Instituto ESC. He brings the perspective of someone who built a scalable and profitable operation.",
+          imageSrc: "/Professores/Eversom.png",
           placeholder: "Photo - Dr. Everson Salem",
           badges: ["+1,000 cases", "+10 specialists"],
         },
@@ -547,6 +586,7 @@ export const landingContent = {
           role: "Specialist · Technique & Practice",
           description:
             "Creator of Pronoia. She ensures depth and legal rigor in every live session and event. Her daily work on the most complex cases validates the methodology taught at the Institute.",
+          imageSrc: "/Professores/valeria.jpg",
           placeholder: "Photo - Dr. Valeria Lesnik",
           badges: ["100% social security focus", "AMS · partner"],
         },
@@ -718,7 +758,7 @@ export const landingContent = {
       eyebrow: "Faculty",
       title: "Who will lead the lessons",
       description:
-        "Eight instructors with real-world experience to accelerate your growth, deepen your technique, and strengthen your authority.",
+        "Nine instructors with real-world experience to accelerate your growth, deepen your technique, and strengthen your authority.",
       previousAria: "Previous faculty members",
       nextAria: "Next faculty members",
       paginationAriaPrefix: "Go to faculty group",
@@ -780,6 +820,13 @@ export const landingContent = {
           description:
             "Explores digital tools, automations, and AI applied to the firm to speed up analysis, reduce rework, and expand operational capacity.",
           highlights: ["AI", "Automation", "Technology"],
+        },
+        {
+          name: "Instructor 09",
+          role: "Specialist · Social Security Strategy",
+          description:
+            "Works on legal strategy, scenario assessment, and decision-making for social security cases with greater complexity and financial impact.",
+          highlights: ["Strategy", "Social Security", "Decision"],
         },
       ],
     },

@@ -1,4 +1,5 @@
 import { ImageIcon } from "lucide-react";
+import Image from "next/image";
 
 import type { LandingCopy } from "@/components/landing/content";
 
@@ -6,6 +7,8 @@ type Leader = {
   name: string;
   role: string;
   description: string;
+  imageSrc?: string;
+  imageClassName?: string;
   placeholder: string;
   badges: ReadonlyArray<string>;
 };
@@ -18,13 +21,25 @@ function LeaderCard({ leader }: { leader: Leader }) {
   return (
     <article className="overflow-hidden rounded-[30px] border border-[rgba(17,23,47,0.08)] bg-white shadow-[0_14px_40px_rgba(17,23,47,0.05)]">
       <div className="grid md:grid-cols-[0.9fr_1.2fr]">
-        <div className="flex min-h-[190px] items-center justify-center border-b border-dashed border-[rgba(17,23,47,0.18)] bg-[linear-gradient(180deg,rgba(250,250,252,0.96),rgba(245,246,250,0.96))] px-8 py-12 text-center md:min-h-[296px] md:border-r md:border-b-0">
-          <div className="space-y-4 text-[var(--muted-foreground)]">
-            <div className="mx-auto flex h-11 w-11 items-center justify-center rounded-xl border border-[rgba(17,23,47,0.12)] bg-white/85">
-              <ImageIcon className="h-5 w-5" />
+        <div className="relative min-h-[260px] overflow-hidden border-b border-dashed border-[rgba(17,23,47,0.18)] bg-[linear-gradient(180deg,rgba(250,250,252,0.96),rgba(245,246,250,0.96))] md:min-h-[296px] md:border-r md:border-b-0">
+          {leader.imageSrc ? (
+            <Image
+              src={leader.imageSrc}
+              alt={leader.name}
+              fill
+              className={`object-cover object-top ${leader.imageClassName ?? ""}`}
+              sizes="(min-width: 1024px) 30vw, 100vw"
+            />
+          ) : (
+            <div className="flex h-full items-center justify-center px-8 py-12 text-center">
+              <div className="space-y-4 text-[var(--muted-foreground)]">
+              <div className="mx-auto flex h-11 w-11 items-center justify-center rounded-xl border border-[rgba(17,23,47,0.12)] bg-white/85">
+                <ImageIcon className="h-5 w-5" />
+              </div>
+              <p className="text-base">{leader.placeholder}</p>
+              </div>
             </div>
-            <p className="text-base">{leader.placeholder}</p>
-          </div>
+          )}
         </div>
 
         <div className="px-6 py-7 sm:px-7 md:px-6 md:py-8 lg:px-7">

@@ -14,7 +14,7 @@ type ProfessionalsSectionProps = {
 };
 
 export function ProfessionalsSection({ copy }: ProfessionalsSectionProps) {
-  const itemsPerPage = 2;
+  const itemsPerPage = 3;
   const professionals: ReadonlyArray<ProfessionalCardData> = copy.items;
   const totalPages = Math.ceil(professionals.length / itemsPerPage);
   const [currentPage, setCurrentPage] = useState(0);
@@ -87,7 +87,7 @@ export function ProfessionalsSection({ copy }: ProfessionalsSectionProps) {
           </button>
         </div>
 
-        <div className="mt-8 grid gap-6 md:grid-cols-2 lg:gap-7">
+        <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3 lg:gap-7">
           {visibleProfessionals.map((professional) => (
             <ProfessionalCard
               key={professional.name}
