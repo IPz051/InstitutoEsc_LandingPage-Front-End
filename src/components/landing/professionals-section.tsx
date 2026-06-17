@@ -1,7 +1,7 @@
 "use client";
 
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import type { LandingCopy } from "@/components/landing/content";
 import {
@@ -18,6 +18,10 @@ export function ProfessionalsSection({ copy }: ProfessionalsSectionProps) {
   const professionals: ReadonlyArray<ProfessionalCardData> = copy.items;
   const totalPages = Math.ceil(professionals.length / itemsPerPage);
   const [currentPage, setCurrentPage] = useState(0);
+
+  useEffect(() => {
+    setCurrentPage(0);
+  }, [copy]);
 
   const start = currentPage * itemsPerPage;
   const visibleProfessionals = professionals.slice(start, start + itemsPerPage);
@@ -90,7 +94,7 @@ export function ProfessionalsSection({ copy }: ProfessionalsSectionProps) {
         <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3 lg:gap-7">
           {visibleProfessionals.map((professional) => (
             <ProfessionalCard
-              key={professional.name}
+              key={`${copy.title}-${professional.name}`}
               professional={professional}
               imageFallbackLabel={copy.imageFallbackLabel}
             />

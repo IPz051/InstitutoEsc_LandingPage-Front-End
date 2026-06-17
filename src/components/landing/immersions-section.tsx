@@ -113,7 +113,7 @@ function ImmersionCard({
             className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#2E4FBE33] px-5 py-3.5 text-sm font-semibold text-[var(--primary)] shadow-none transition hover:bg-[#2E4FBE40]"
           >
             <Info className="h-4 w-4" />
-            Informações do curso
+            {copy.infoButtonLabel}
           </button>
 
           <Link

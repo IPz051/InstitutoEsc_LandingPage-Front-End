@@ -56,7 +56,7 @@ export function LandingPage() {
       <LeadershipSection copy={copy.leadership} />
       <ImmersionsSection copy={copy.immersions} />
       <PostgraduateSection copy={copy.postgraduate} />
-      <ProfessionalsSection copy={copy.professionals} />
+      <ProfessionalsSection key={`professionals-${language}`} copy={copy.professionals} />
       <TestimonialsSection copy={copy.testimonials} />
       <PricingSection copy={copy.pricing} />
       <FinalCtaSection copy={copy.finalCta} />
