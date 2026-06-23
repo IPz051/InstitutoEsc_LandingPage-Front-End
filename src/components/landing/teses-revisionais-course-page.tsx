@@ -19,76 +19,79 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ComponentType } from "react";
 
+import { landingContent } from "@/components/landing/content";
+import { Footer } from "@/components/landing/footer";
+
 const courseData = {
-  badge: "Curso Presencial | Direito Previdenciario",
+  badge: "Curso Presencial | Direito Previdenciário",
   title:
-    "PRATICA: TESES REVISIONAIS APLICAVEIS AOS BENEFICIOS NAO PROGRAMAVEIS DO RGPS APOS A REFORMA DA PREVIDENCIA",
+    "PRÁTICA: TESES REVISIONAIS APLICÁVEIS AOS BENEFÍCIOS NÃO PROGRAMÁVEIS DO RGPS APÓS A REFORMA DA PREVIDÊNCIA",
   description:
-    "Imersao focada nas principais teses revisionais aplicaveis aos beneficios por incapacidade e a pensao por morte no RGPS, com abordagem pratica, resolucao de casos concretos e modelos para uso profissional.",
-  category: "Direito Previdenciario",
+    "Imersão focada nas principais teses revisionais aplicáveis aos benefícios por incapacidade e à pensão por morte no RGPS, com abordagem prática, resolução de casos concretos e modelos para uso profissional.",
+  category: "Direito Previdenciário",
   duration: "4 horas",
   location: "Curso presencial",
   audience:
-    "Advogados e profissionais que atuam com revisoes previdenciarias no RGPS",
+    "Advogados e profissionais que atuam com revisões previdenciárias no RGPS",
   ctaLabel: "Quero reservar minha vaga",
-  secondaryCta: "Ver conteudo programatico",
+  secondaryCta: "Ver conteúdo programático",
   paragraphs: [
-    "A proposta desta landing e apresentar com clareza uma imersao objetiva e altamente aplicavel para quem atua com beneficios nao programaveis do RGPS no cenario pos-Reforma da Previdencia.",
-    "O curso concentra a discussao em duas frentes revisionais de grande relevancia pratica: o recalculo da aposentadoria por incapacidade permanente e da pensao por morte pela tecnica de descarte de contribuicoes, e a analise do tempo de convivencia do casal como requisito para manutencao da pensao por morte.",
-    "A conducao do conteudo parte da solucao de casos concretos, permitindo que a exposicao teorica seja convertida em estrategia de atuacao com utilidade imediata no contencioso previdenciario.",
-    "Como complemento, os participantes recebem modelos das teses para aplicacao na pratica previdenciaria, fortalecendo a transferencia do conteudo para a rotina profissional.",
+    "A proposta desta landing é apresentar com clareza uma imersão objetiva e altamente aplicável para quem atua com benefícios não programáveis do RGPS no cenário pós-Reforma da Previdência.",
+    "O curso concentra a discussão em duas frentes revisionais de grande relevância prática: o recálculo da aposentadoria por incapacidade permanente e da pensão por morte pela técnica de descarte de contribuições, e a análise do tempo de convivência do casal como requisito para manutenção da pensão por morte.",
+    "A condução do conteúdo parte da solução de casos concretos, permitindo que a exposição teórica seja convertida em estratégia de atuação com utilidade imediata no contencioso previdenciário.",
+    "Como complemento, os participantes recebem modelos das teses para aplicação na prática previdenciária, fortalecendo a transferência do conteúdo para a rotina profissional.",
   ],
   highlights: [
-    "Teses revisionais aplicaveis a beneficios por incapacidade e pensao por morte.",
-    "Tecnica de descarte de contribuicoes no recalculo de beneficios.",
-    "Analise do tempo de convivencia como requisito para manutencao da pensao por morte.",
-    "Modelos prontos para aplicacao pratica e estudo com casos concretos.",
+    "Teses revisionais aplicáveis a benefícios por incapacidade e pensão por morte.",
+    "Técnica de descarte de contribuições no recálculo de benefícios.",
+    "Análise do tempo de convivência como requisito para manutenção da pensão por morte.",
+    "Modelos prontos para aplicação prática e estudo com casos concretos.",
   ],
   audienceList: [
-    "Advogados previdenciaristas que atuam com revisao de beneficios nao programaveis do RGPS.",
-    "Profissionais que buscam ampliar repertorio tecnico sobre pensao por morte e incapacidade permanente apos a EC n. 103/2019.",
-    "Participantes que desejam transformar teses revisionais em pecas e estrategias de atuacao concretas.",
-    "Quem procura modelos prontos e leitura aplicada para acelerar a pratica previdenciaria.",
+    "Advogados previdenciaristas que atuam com revisão de benefícios não programáveis do RGPS.",
+    "Profissionais que buscam ampliar repertório técnico sobre pensão por morte e incapacidade permanente após a EC n. 103/2019.",
+    "Participantes que desejam transformar teses revisionais em peças e estratégias de atuação concretas.",
+    "Quem procura modelos prontos e leitura aplicada para acelerar a prática previdenciária.",
   ],
   takeaways: [
-    "Identificar oportunidades revisionais com maior potencial pratico.",
-    "Aplicar a tecnica de descarte de contribuicoes com mais seguranca.",
-    "Analisar corretamente o requisito de convivencia para pensao por morte.",
+    "Identificar oportunidades revisionais com maior potencial prático.",
+    "Aplicar a técnica de descarte de contribuições com mais segurança.",
+    "Analisar corretamente o requisito de convivência para pensão por morte.",
     "Levar para a rotina modelos e caminhos argumentativos prontos para uso.",
   ],
   professor: {
     name: "Lucas Alberton",
-    role: "Professor da imersao",
+    role: "Professor da imersão",
     imageSrc: "/9-professores/lucas-alberton.png",
     description:
-      "Advogado previdenciarista, mestre em Direito, especialista em Direito Previdenciario e professor de Direito Processual Civil, Direito Previdenciario e Etica Profissional em graduacao e pos-graduacao.",
+      "Advogado previdenciarista, mestre em Direito, especialista em Direito Previdenciário e professor de Direito Processual Civil, Direito Previdenciário e Ética Profissional em graduação e pós-graduação.",
   },
   modules: [
     {
-      title: "Teses revisionais em beneficios por incapacidade e pensao por morte",
-      subtitle: "Aplicacao pratica dos principais pontos apos a EC n. 103/2019",
+      title: "Teses revisionais em benefícios por incapacidade e pensão por morte",
+      subtitle: "Aplicação prática dos principais pontos após a EC n. 103/2019",
       items: [
-        "Recalculo da aposentadoria por incapacidade permanente pela tecnica de descarte de contribuicoes.",
-        "Recalculo da pensao por morte pela tecnica de descarte de contribuicoes.",
-        "Analise do tempo de convivencia do casal como requisito para manutencao da pensao por morte no RGPS.",
-        "Exame de casamento e uniao estavel com ou sem solucao de continuidade na relacao.",
+        "Recálculo da aposentadoria por incapacidade permanente pela técnica de descarte de contribuições.",
+        "Recálculo da pensão por morte pela técnica de descarte de contribuições.",
+        "Análise do tempo de convivência do casal como requisito para manutenção da pensão por morte no RGPS.",
+        "Exame de casamento e união estável com ou sem solução de continuidade na relação.",
       ],
     },
     {
-      title: "Metodologia aplicada a pratica previdenciaria",
-      subtitle: "Conteudo concentrado em resultado e transferencia pratica",
+      title: "Metodologia aplicada à prática previdenciária",
+      subtitle: "Conteúdo concentrado em resultado e transferência prática",
       items: [
-        "Exposicao do conteudo programatico por meio da solucao de casos concretos.",
-        "Encaminhamento de modelos das teses para aplicacao na pratica previdenciaria.",
-        "Leitura estrategica das teses para uso em analise de casos e construcao argumentativa.",
+        "Exposição do conteúdo programático por meio da solução de casos concretos.",
+        "Encaminhamento de modelos das teses para aplicação na prática previdenciária.",
+        "Leitura estratégica das teses para uso em análise de casos e construção argumentativa.",
       ],
     },
   ],
   jurisprudence: [
-    "Leitura das teses revisionais com foco na utilidade pratica para beneficios nao programaveis do RGPS.",
-    "Analise de fundamentos relevantes para recalculo de incapacidade permanente e pensao por morte.",
-    "Discussao sobre convivencia, continuidade da relacao e seus efeitos previdenciarios.",
-    "Aplicacao de modelos argumentativos orientados para atuacao profissional.",
+    "Leitura das teses revisionais com foco na utilidade prática para benefícios não programáveis do RGPS.",
+    "Análise de fundamentos relevantes para recálculo de incapacidade permanente e pensão por morte.",
+    "Discussão sobre convivência, continuidade da relação e seus efeitos previdenciários.",
+    "Aplicação de modelos argumentativos orientados para atuação profissional.",
   ],
 };
 
@@ -173,15 +176,7 @@ export function TesesRevisionaisCoursePage() {
         <div className="container-shell relative z-10 pb-18">
           <div className="flex flex-col gap-14 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-[760px]">
-              <Link
-                href="/"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--primary)] transition hover:text-[#2845a8]"
-              >
-                <ArrowRight className="h-4 w-4 rotate-180" />
-                Voltar para a landing principal
-              </Link>
-
-              <div className="mt-8 inline-flex items-center gap-2 rounded-full border border-[rgba(46,79,190,0.12)] bg-white/92 px-4 py-2 text-sm font-semibold text-[var(--primary)] shadow-[0_10px_30px_rgba(46,79,190,0.08)] backdrop-blur-sm">
+              <div className="inline-flex items-center gap-2 rounded-full border border-[rgba(46,79,190,0.12)] bg-white/92 px-4 py-2 text-sm font-semibold text-[var(--primary)] shadow-[0_10px_30px_rgba(46,79,190,0.08)] backdrop-blur-sm">
                 <span className="h-2.5 w-2.5 rounded-full bg-[var(--secondary)]" />
                 {courseData.badge}
               </div>
@@ -214,8 +209,8 @@ export function TesesRevisionaisCoursePage() {
             </div>
 
             <div className="grid w-full max-w-[420px] gap-4 sm:grid-cols-2 lg:grid-cols-1">
-              <StatCard icon={Clock3} label="Duracao" value={courseData.duration} />
-              <StatCard icon={Scale} label="Materia" value={courseData.category} />
+              <StatCard icon={Clock3} label="Duração" value={courseData.duration} />
+              <StatCard icon={Scale} label="Matéria" value={courseData.category} />
               <StatCard icon={MapPin} label="Formato" value={courseData.location} />
               <StatCard icon={Users} label="Indicado para" value={courseData.audience} />
             </div>
@@ -227,8 +222,8 @@ export function TesesRevisionaisCoursePage() {
         <div className="container-shell grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
           <div>
             <SectionHeading
-              eyebrow="Visao Geral"
-              title="Teses revisionais com foco direto em aplicacao pratica no RGPS"
+              eyebrow="Visão Geral"
+              title="Teses revisionais com foco direto em aplicação prática no RGPS"
               description="A estrutura replica a landing anterior, mantendo hierarquia visual, contraste e uma narrativa clara de valor para o profissional previdenciarista."
             />
 
@@ -259,10 +254,10 @@ export function TesesRevisionaisCoursePage() {
 
             <div className="mt-8 rounded-[24px] bg-[var(--foreground)] p-6 text-white">
               <p className="text-xs font-bold uppercase tracking-[0.24em] text-white/55">
-                Diferencial da imersao
+                Diferencial da imersão
               </p>
               <p className="mt-3 text-base leading-7 text-white/82">
-                O curso entrega conteudo concentrado, estudo por casos concretos e modelos prontos, o que aumenta a velocidade de aplicacao das teses na pratica previdenciaria.
+                O curso entrega conteúdo concentrado, estudo por casos concretos e modelos prontos, o que aumenta a velocidade de aplicação das teses na prática previdenciária.
               </p>
             </div>
           </div>
@@ -273,8 +268,8 @@ export function TesesRevisionaisCoursePage() {
         <div className="container-shell">
           <SectionHeading
             eyebrow="Para Quem"
-            title="Pensada para quem precisa transformar tese revisional em atuacao concreta"
-            description="A pagina foi desenhada para comunicar utilidade imediata, especialmente para quem lida com incapacidade permanente e pensao por morte apos a Reforma da Previdencia."
+            title="Pensada para quem precisa transformar tese revisional em atuação concreta"
+            description="A página foi desenhada para comunicar utilidade imediata, especialmente para quem lida com incapacidade permanente e pensão por morte após a Reforma da Previdência."
           />
 
           <div className="mt-12 grid gap-5 lg:grid-cols-2">
@@ -284,7 +279,7 @@ export function TesesRevisionaisCoursePage() {
                   <BriefcaseBusiness className="h-5 w-5" />
                 </div>
                 <h3 className="section-title text-[1.7rem] font-bold tracking-[-0.04em] text-[var(--foreground)]">
-                  Publico indicado
+                  Público indicado
                 </h3>
               </div>
 
@@ -304,7 +299,7 @@ export function TesesRevisionaisCoursePage() {
                   <GraduationCap className="h-5 w-5" />
                 </div>
                 <h3 className="section-title text-[1.7rem] font-bold tracking-[-0.04em] text-[var(--foreground)]">
-                  Resultado pratico esperado
+                  Resultado prático esperado
                 </h3>
               </div>
 
@@ -325,8 +320,8 @@ export function TesesRevisionaisCoursePage() {
         <div className="container-shell">
           <SectionHeading
             eyebrow="Professor"
-            title="Conteudo conduzido por Lucas Alberton"
-            description="A secao do professor segue o mesmo desenho usado nas paginas anteriores para reforcar unidade visual e autoridade tecnica."
+            title="Conteúdo conduzido por Lucas Alberton"
+            description="A seção do professor segue o mesmo desenho usado nas páginas anteriores para reforçar unidade visual e autoridade técnica."
           />
 
           <article className="mt-12 overflow-hidden rounded-[30px] border border-[rgba(17,23,47,0.08)] bg-[#f7f8fc] shadow-[0_18px_40px_rgba(17,23,47,0.04)]">
@@ -355,7 +350,7 @@ export function TesesRevisionaisCoursePage() {
                   <div className="rounded-[22px] bg-white p-5 shadow-[0_10px_24px_rgba(17,23,47,0.04)]">
                     <Scale className="h-5 w-5 text-[var(--primary)]" />
                     <p className="mt-3 text-sm font-bold uppercase tracking-[0.14em] text-[var(--primary)]">
-                      Revisao
+                      Revisão
                     </p>
                     <p className="mt-2 text-sm leading-6 text-[var(--muted-foreground)]">
                       Foco em teses revisionais de alta aplicabilidade.
@@ -367,7 +362,7 @@ export function TesesRevisionaisCoursePage() {
                       Casos
                     </p>
                     <p className="mt-2 text-sm leading-6 text-[var(--muted-foreground)]">
-                      Desenvolvimento por meio da solucao de casos concretos.
+                      Desenvolvimento por meio da solução de casos concretos.
                     </p>
                   </div>
                   <div className="rounded-[22px] bg-white p-5 shadow-[0_10px_24px_rgba(17,23,47,0.04)]">
@@ -376,7 +371,7 @@ export function TesesRevisionaisCoursePage() {
                       Modelos
                     </p>
                     <p className="mt-2 text-sm leading-6 text-[var(--muted-foreground)]">
-                      Materiais prontos para acelerar a aplicacao pratica.
+                      Materiais prontos para acelerar a aplicação prática.
                     </p>
                   </div>
                 </div>
@@ -389,9 +384,9 @@ export function TesesRevisionaisCoursePage() {
       <section id="conteudo" className="bg-[#0d1530] py-20 text-white sm:py-24">
         <div className="container-shell">
           <SectionHeading
-            eyebrow="Conteudo Programatico"
-            title="Teses, metodologia aplicada e modelos para a pratica previdenciaria"
-            description="Mantive o mesmo tratamento de contraste e cores da pagina anterior para que a leitura continue forte nas secoes escuras."
+            eyebrow="Conteúdo Programático"
+            title="Teses, metodologia aplicada e modelos para a prática previdenciária"
+            description="Mantive o mesmo tratamento de contraste e cores da página anterior para que a leitura continue forte nas seções escuras."
             dark
           />
 
@@ -402,7 +397,7 @@ export function TesesRevisionaisCoursePage() {
                 className="rounded-[30px] border border-white/10 bg-white/6 p-7 backdrop-blur-sm sm:p-8"
               >
                 <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#8ea4ff]">
-                  Modulo tematico
+                  Módulo temático
                 </p>
                 <h3 className="section-title mt-3 text-[1.8rem] font-bold leading-[1.04] tracking-[-0.04em] text-white">
                   {module.title}
@@ -428,17 +423,17 @@ export function TesesRevisionaisCoursePage() {
         </div>
       </section>
 
-      <section className="bg-white py-20 sm:py-24">
-        <div className="container-shell grid gap-6 lg:grid-cols-[0.92fr_1.08fr]">
+      <section className="bg-[#f5f6fa] px-3 pb-20 pt-6 sm:px-5 sm:pb-24 lg:pb-28">
+        <div className="container-shell grid gap-6 lg:grid-cols-[0.92fr_1.08fr] mx-auto max-w-[1160px]">
           <div className="rounded-[30px] border border-[rgba(17,23,47,0.08)] bg-[#f7f8fc] p-7 shadow-[0_18px_40px_rgba(17,23,47,0.04)] sm:p-8">
             <div className="flex h-14 w-14 items-center justify-center rounded-[20px] bg-[#eef2ff] text-[var(--primary)]">
               <Gavel className="h-6 w-6" />
             </div>
             <h3 className="section-title mt-6 text-[1.9rem] font-bold leading-[1.04] tracking-[-0.04em] text-[var(--foreground)]">
-              Aplicacao pratica em destaque
+              Aplicação prática em destaque
             </h3>
             <p className="mt-4 text-base leading-8 text-[var(--muted-foreground)]">
-              Esta secao reforca que a imersao nao entrega apenas conteudo teorico, mas caminhos concretos para identificar, estruturar e aplicar teses revisionais no RGPS.
+              Esta seção reforça que a imersão não entrega apenas conteúdo teórico, mas caminhos concretos para identificar, estruturar e aplicar teses revisionais no RGPS.
             </p>
 
             <ul className="mt-6 space-y-4">
@@ -456,10 +451,10 @@ export function TesesRevisionaisCoursePage() {
               Chamada final
             </p>
             <h3 className="section-title mt-4 text-[2.2rem] font-extrabold leading-[1.02] tracking-[-0.05em] text-white sm:text-[2.8rem]">
-              Uma imersao para transformar tese revisional em estrategia de atuacao imediata
+              Uma imersão para transformar tese revisional em estratégia de atuação imediata
             </h3>
             <p className="mt-5 max-w-[38rem] text-base leading-8 text-white/82 sm:text-lg">
-              A nova landing do terceiro card segue o mesmo padrao criado nas anteriores e replica exatamente o estilo dos botoes finais que voce ajustou.
+              A nova landing do terceiro card segue o mesmo padrão criado nas anteriores e replica exatamente o estilo dos botões finais que você ajustou.
             </p>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -467,7 +462,7 @@ export function TesesRevisionaisCoursePage() {
                 href="/cadastro"
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 px-7 py-4 text-base font-semibold text-[var(--primary)] transition hover:bg-white/8"
               >
-                Garantir interesse na imersao
+                Garantir interesse na imersão
                 <ArrowRight className="h-4 w-4" />
               </Link>
 
@@ -486,25 +481,25 @@ export function TesesRevisionaisCoursePage() {
                   Estrutura
                 </p>
                 <p className="mt-2 text-sm leading-6 text-white/82">
-                  Hero, prova de valor, professor, conteudo e CTA final.
+                  Hero, prova de valor, professor, conteúdo e CTA final.
                 </p>
               </div>
               <div className="rounded-[24px] border border-white/12 bg-white/8 p-5">
                 <Users className="h-5 w-5 text-white/78" />
                 <p className="mt-3 text-sm font-bold uppercase tracking-[0.16em] text-white/56">
-                  Conversao
+                  Conversão
                 </p>
                 <p className="mt-2 text-sm leading-6 text-white/82">
-                  Botoes principais integrados ao fluxo de cadastro existente.
+                  Botões principais integrados ao fluxo de cadastro existente.
                 </p>
               </div>
               <div className="rounded-[24px] border border-white/12 bg-white/8 p-5">
                 <BookOpenText className="h-5 w-5 text-white/78" />
                 <p className="mt-3 text-sm font-bold uppercase tracking-[0.16em] text-white/56">
-                  Consistencia
+                  Consistência
                 </p>
                 <p className="mt-2 text-sm leading-6 text-white/82">
-                  Mesma hierarquia visual, contraste e padrao das paginas anteriores.
+                  Mesma hierarquia visual, contraste e padrão das páginas anteriores.
                 </p>
               </div>
             </div>
@@ -512,27 +507,7 @@ export function TesesRevisionaisCoursePage() {
         </div>
       </section>
 
-      <footer className="bg-[#0d1530] py-10 text-white">
-        <div className="container-shell flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-          <div>
-            <p className="section-title text-2xl font-bold tracking-[-0.04em]">
-              Instituto ESC
-            </p>
-            <p className="mt-2 text-sm text-white/62">
-              O novo ecossistema do Direito Previdenciario.
-            </p>
-          </div>
-
-          <div className="flex flex-col gap-3 text-sm text-white/72 sm:items-end">
-            <Link href="/" className="transition hover:text-white">
-              Voltar para a pagina principal
-            </Link>
-            <Link href="/cadastro" className="transition hover:text-white">
-              Ir para cadastro
-            </Link>
-          </div>
-        </div>
-      </footer>
+      <Footer copy={landingContent.pt.footer} />
     </main>
   );
 }

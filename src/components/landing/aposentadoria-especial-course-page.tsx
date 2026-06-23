@@ -19,107 +19,110 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ComponentType } from "react";
 
+import { landingContent } from "@/components/landing/content";
+import { Footer } from "@/components/landing/footer";
+
 const courseData = {
-  badge: "Curso Presencial | Direito do Trabalho e Direito Previdenciario",
+  badge: "Curso Presencial | Direito do Trabalho e Direito Previdenciário",
   title:
-    "Aposentadoria Especial na Pratica: Domine PPP, LTCAT e a Prova do Tempo Especial",
+    "Aposentadoria Especial na Prática: Domine PPP, LTCAT e a Prova do Tempo Especial",
   description:
-    "Imersao pratica e integrada sobre a producao da prova tecnica do tempo especial, com enfoque em PPP, LTCAT, pericia, EPIs e estrategias trabalhistas e previdenciarias para demandas de aposentadoria especial.",
-  category: "Direito do Trabalho e Direito Previdenciario",
+    "Imersão prática e integrada sobre a produção da prova técnica do tempo especial, com enfoque em PPP, LTCAT, perícia, EPIs e estratégias trabalhistas e previdenciárias para demandas de aposentadoria especial.",
+  category: "Direito do Trabalho e Direito Previdenciário",
   duration: "11 horas",
   location: "Curso presencial",
   audience:
-    "Advogados, servidores publicos, peritos, contadores e estudantes de Direito",
+    "Advogados, servidores públicos, peritos, contadores e estudantes de Direito",
   ctaLabel: "Quero reservar minha vaga",
-  secondaryCta: "Ver conteudo programatico",
+  secondaryCta: "Ver conteúdo programático",
   paragraphs: [
-    "Grande parte das acoes envolvendo aposentadoria especial nao depende apenas da existencia do direito, mas da qualidade da prova tecnica apresentada. Na pratica profissional, sao recorrentes situacoes como PPP incompleto, ausencia ou inconsistencias no LTCAT, divergencias sobre o uso e a eficacia dos Equipamentos de Protecao Individual e dificuldades na producao de prova pericial adequada.",
-    "Esses cenarios exigem do advogado uma atuacao estrategica que conecta, ao mesmo tempo, aspectos trabalhistas e previdenciarios, alem de exigir leitura atualizada da jurisprudencia dos Tribunais Superiores e dos tribunais regionais.",
-    "O curso foi estruturado para oferecer uma visao integrada e pratica sobre a prova do tempo especial, permitindo que o profissional atue com mais seguranca na construcao da prova, na obtencao e retificacao de documentos e na conducao de demandas envolvendo aposentadoria especial.",
-    "A pagina segue o mesmo padrao visual das anteriores, mas com uma narrativa orientada para profundidade tecnica, aplicacao imediata e integracao entre estrategia processual e prova previdenciaria.",
+    "Grande parte das ações envolvendo aposentadoria especial não depende apenas da existência do direito, mas da qualidade da prova técnica apresentada. Na prática profissional, são recorrentes situações como PPP incompleto, ausência ou inconsistências no LTCAT, divergências sobre o uso e a eficácia dos Equipamentos de Proteção Individual e dificuldades na produção de prova pericial adequada.",
+    "Esses cenários exigem do advogado uma atuação estratégica que conecta, ao mesmo tempo, aspectos trabalhistas e previdenciários, além de exigir leitura atualizada da jurisprudência dos Tribunais Superiores e dos tribunais regionais.",
+    "O curso foi estruturado para oferecer uma visão integrada e prática sobre a prova do tempo especial, permitindo que o profissional atue com mais segurança na construção da prova, na obtenção e retificação de documentos e na condução de demandas envolvendo aposentadoria especial.",
+    "A página segue o mesmo padrão visual das anteriores, mas com uma narrativa orientada para profundidade técnica, aplicação imediata e integração entre estratégia processual e prova previdenciária.",
   ],
   highlights: [
-    "Fundamentos juridicos da comprovacao da atividade especial.",
-    "Utilizacao tecnica do PPP e do LTCAT na prova previdenciaria.",
-    "Estrategias para obtencao e retificacao do PPP por meio de acao trabalhista.",
+    "Fundamentos jurídicos da comprovação da atividade especial.",
+    "Utilização técnica do PPP e do LTCAT na prova previdenciária.",
+    "Estratégias para obtenção e retificação do PPP por meio de ação trabalhista.",
     "Modalidades de prova pericial aplicadas ao tempo especial.",
-    "Interpretacao da jurisprudencia atual do STF, STJ e tribunais regionais.",
-    "Discussao juridica sobre eficacia dos EPIs e estrategias processuais.",
+    "Interpretação da jurisprudência atual do STF, STJ e tribunais regionais.",
+    "Discussão jurídica sobre eficácia dos EPIs e estratégias processuais.",
   ],
   audienceList: [
-    "Advogados previdenciaristas que atuam com aposentadoria especial e prova tecnica.",
-    "Advogados trabalhistas que precisam integrar a via laboral a estrategia previdenciaria.",
-    "Servidores publicos, peritos judiciais e contadores envolvidos com documentacao tecnica e analise probatoria.",
-    "Estudantes de Direito interessados em atuar com tempo especial e litigancia previdenciaria.",
+    "Advogados previdenciaristas que atuam com aposentadoria especial e prova técnica.",
+    "Advogados trabalhistas que precisam integrar a via laboral à estratégia previdenciária.",
+    "Servidores públicos, peritos judiciais e contadores envolvidos com documentação técnica e análise probatória.",
+    "Estudantes de Direito interessados em atuar com tempo especial e litigância previdenciária.",
   ],
   takeaways: [
-    "Construir prova tecnica mais robusta para reconhecimento do tempo especial.",
-    "Escolher com mais seguranca a estrategia de obtencao e retificacao do PPP.",
-    "Argumentar sobre eficacia do EPI com base em jurisprudencia relevante.",
-    "Integrar estrategia trabalhista e previdenciaria em casos concretos.",
+    "Construir prova técnica mais robusta para reconhecimento do tempo especial.",
+    "Escolher com mais segurança a estratégia de obtenção e retificação do PPP.",
+    "Argumentar sobre eficácia do EPI com base em jurisprudência relevante.",
+    "Integrar estratégia trabalhista e previdenciária em casos concretos.",
   ],
   professors: [
     {
       name: "Carlos Alberto Pereira de Castro",
-      role: "Professor | Modulo 1",
+      role: "Professor | Módulo 1",
       imageSrc: "/9-professores/carlos-alberto-pereira-de-castro.png",
       description:
-        "Diretor de Relacionamento com o Direito do Trabalho do IBDP, Juiz do Trabalho da 12a Regiao-SC, doutorando em Ciencias Juridicas pela Universidade Autonoma de Lisboa e coautor de obras de referencia em Direito Previdenciario.",
+        "Diretor de Relacionamento com o Direito do Trabalho do IBDP, Juiz do Trabalho da 12ª Região-SC, doutorando em Ciências Jurídicas pela Universidade Autônoma de Lisboa e coautor de obras de referência em Direito Previdenciário.",
     },
     {
-      name: "Joao Batista Lazzari",
-      role: "Professor | Modulo 2 e Oficina Pratica",
+      name: "João Batista Lazzari",
+      role: "Professor | Módulo 2 e Oficina Prática",
       imageSrc: "/9-professores/joao-batista-lazzari.png",
       description:
-        "Diretor de Processo Judicial Previdenciario do IBDP, pos-doutor em Direito e Justica Constitucional, Juiz Federal do TRF da 4a Regiao (1996-2023) e coautor de obras classicas em Direito Previdenciario e pratica processual.",
+        "Diretor de Processo Judicial Previdenciário do IBDP, pós-doutor em Direito e Justiça Constitucional, Juiz Federal do TRF da 4ª Região (1996-2023) e coautor de obras clássicas em Direito Previdenciário e prática processual.",
     },
   ],
   modules: [
     {
-      title: "Modulo 1 | PPP e LTCAT: producao da prova e aspectos trabalhistas",
-      subtitle: "Conducao por Carlos Alberto Pereira de Castro",
+      title: "Módulo 1 | PPP e LTCAT: produção da prova e aspectos trabalhistas",
+      subtitle: "Condução por Carlos Alberto Pereira de Castro",
       items: [
-        "Fundamentos da comprovacao da atividade especial.",
+        "Fundamentos da comprovação da atividade especial.",
         "Modalidades de prova pericial: direta, indireta e por similaridade.",
-        "Acao na Justica do Trabalho para obtencao ou retificacao do PPP.",
-        "Fundamentos juridicos e cabimento da acao.",
-        "Estrutura da peticao inicial.",
-        "Producao de prova pericial.",
-        "Efeitos da decisao judicial sobre PPP e LTCAT.",
-        "Interferencia da aposentadoria especial no contrato de trabalho.",
+        "Ação na Justiça do Trabalho para obtenção ou retificação do PPP.",
+        "Fundamentos jurídicos e cabimento da ação.",
+        "Estrutura da petição inicial.",
+        "Produção de prova pericial.",
+        "Efeitos da decisão judicial sobre PPP e LTCAT.",
+        "Interferência da aposentadoria especial no contrato de trabalho.",
       ],
     },
     {
-      title: "Modulo 2 | Tempo especial: aspectos previdenciarios",
-      subtitle: "Conducao por Joao Batista Lazzari",
+      title: "Módulo 2 | Tempo especial: aspectos previdenciários",
+      subtitle: "Condução por João Batista Lazzari",
       items: [
         "Reconhecimento do tempo especial e seus efeitos.",
-        "Evolucao normativa e jurisprudencial.",
+        "Evolução normativa e jurisprudencial.",
         "Atividades perigosas e penosas.",
-        "Analise de categorias profissionais, como vigilantes, eletricitarios e frentistas.",
-        "Equipamentos de Protecao Individual na jurisprudencia previdenciaria.",
+        "Análise de categorias profissionais, como vigilantes, eletricitários e frentistas.",
+        "Equipamentos de Proteção Individual na jurisprudência previdenciária.",
         "Tema 555 do STF.",
         "Tema 1090 do STJ.",
         "IRDR 15 do TRF4 e Tema 213 da TNU.",
-        "Estrategias processuais para descaracterizacao da eficacia do EPI.",
+        "Estratégias processuais para descaracterização da eficácia do EPI.",
       ],
     },
     {
-      title: "Modulo 3 | Oficina pratica",
-      subtitle: "Atividade conduzida pelos dois professores com situacoes concretas",
+      title: "Módulo 3 | Oficina prática",
+      subtitle: "Atividade conduzida pelos dois professores com situações concretas",
       items: [
-        "Casos reais de obtencao e revisao de PPP na Justica do Trabalho.",
-        "Analise de prova tecnica em acoes previdenciarias.",
-        "Orientacoes praticas para elaboracao de peticoes.",
-        "Integracao entre estrategias trabalhistas e previdenciarias.",
+        "Casos reais de obtenção e revisão de PPP na Justiça do Trabalho.",
+        "Análise de prova técnica em ações previdenciárias.",
+        "Orientações práticas para elaboração de petições.",
+        "Integração entre estratégias trabalhistas e previdenciárias.",
       ],
     },
   ],
   jurisprudence: [
     "Leitura integrada dos precedentes relevantes do STF, STJ, tribunais regionais e TNU.",
-    "Analise pratica da jurisprudencia sobre eficacia dos EPIs e descaracterizacao da exposicao.",
-    "Uso estrategico da prova pericial e dos documentos tecnicos na aposentadoria especial.",
-    "Conexao entre discussao trabalhista e aproveitamento previdenciario do material probatorio.",
+    "Análise prática da jurisprudência sobre eficácia dos EPIs e descaracterização da exposição.",
+    "Uso estratégico da prova pericial e dos documentos técnicos na aposentadoria especial.",
+    "Conexão entre discussão trabalhista e aproveitamento previdenciário do material probatório.",
   ],
 };
 
@@ -204,15 +207,7 @@ export function AposentadoriaEspecialCoursePage() {
         <div className="container-shell relative z-10 pb-18">
           <div className="flex flex-col gap-14 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-[760px]">
-              <Link
-                href="/"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--primary)] transition hover:text-[#2845a8]"
-              >
-                <ArrowRight className="h-4 w-4 rotate-180" />
-                Voltar para a landing principal
-              </Link>
-
-              <div className="mt-8 inline-flex items-center gap-2 rounded-full border border-[rgba(46,79,190,0.12)] bg-white/92 px-4 py-2 text-sm font-semibold text-[var(--primary)] shadow-[0_10px_30px_rgba(46,79,190,0.08)] backdrop-blur-sm">
+              <div className="inline-flex items-center gap-2 rounded-full border border-[rgba(46,79,190,0.12)] bg-white/92 px-4 py-2 text-sm font-semibold text-[var(--primary)] shadow-[0_10px_30px_rgba(46,79,190,0.08)] backdrop-blur-sm">
                 <span className="h-2.5 w-2.5 rounded-full bg-[var(--secondary)]" />
                 {courseData.badge}
               </div>
@@ -245,8 +240,8 @@ export function AposentadoriaEspecialCoursePage() {
             </div>
 
             <div className="grid w-full max-w-[420px] gap-4 sm:grid-cols-2 lg:grid-cols-1">
-              <StatCard icon={Clock3} label="Duracao" value={courseData.duration} />
-              <StatCard icon={Scale} label="Materia" value={courseData.category} />
+              <StatCard icon={Clock3} label="Duração" value={courseData.duration} />
+              <StatCard icon={Scale} label="Matéria" value={courseData.category} />
               <StatCard icon={MapPin} label="Formato" value={courseData.location} />
               <StatCard icon={Users} label="Indicado para" value={courseData.audience} />
             </div>
@@ -258,9 +253,9 @@ export function AposentadoriaEspecialCoursePage() {
         <div className="container-shell grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
           <div>
             <SectionHeading
-              eyebrow="Visao Geral"
-              title="Prova tecnica, estrategia processual e integracao entre as esferas trabalhista e previdenciaria"
-              description="A ultima landing segue o mesmo padrao que criamos, preservando hierarquia visual, contraste e estrutura de conversao com mais densidade tecnica no conteudo."
+              eyebrow="Visão Geral"
+              title="Prova técnica, estratégia processual e integração entre as esferas trabalhista e previdenciária"
+              description="A última landing segue o mesmo padrão que criamos, preservando hierarquia visual, contraste e estrutura de conversão com mais densidade técnica no conteúdo."
             />
 
             <div className="mt-8 space-y-5 text-base leading-8 text-[var(--muted-foreground)] sm:text-lg">
@@ -276,7 +271,7 @@ export function AposentadoriaEspecialCoursePage() {
             </div>
 
             <h3 className="section-title mt-6 text-[1.8rem] font-bold leading-[1.05] tracking-[-0.04em] text-[var(--foreground)]">
-              O que voce vai aprender
+              O que você vai aprender
             </h3>
 
             <ul className="mt-6 space-y-4">
@@ -290,10 +285,10 @@ export function AposentadoriaEspecialCoursePage() {
 
             <div className="mt-8 rounded-[24px] bg-[var(--foreground)] p-6 text-white">
               <p className="text-xs font-bold uppercase tracking-[0.24em] text-white/55">
-                Diferencial da imersao
+                Diferencial da imersão
               </p>
               <p className="mt-3 text-base leading-7 text-white/82">
-                O curso foi desenhado para unir prova tecnica, estrategia processual e leitura jurisprudencial em um unico percurso de aprendizagem com aplicacao imediata na aposentadoria especial.
+                O curso foi desenhado para unir prova técnica, estratégia processual e leitura jurisprudencial em um único percurso de aprendizagem com aplicação imediata na aposentadoria especial.
               </p>
             </div>
           </div>
@@ -304,8 +299,8 @@ export function AposentadoriaEspecialCoursePage() {
         <div className="container-shell">
           <SectionHeading
             eyebrow="Para Quem"
-            title="Pensado para profissionais que precisam dominar a prova do tempo especial com mais seguranca"
-            description="A narrativa da pagina deixa claro o ganho pratico para quem atua ou deseja atuar com aposentadoria especial em alto nivel tecnico."
+            title="Pensado para profissionais que precisam dominar a prova do tempo especial com mais segurança"
+            description="A narrativa da página deixa claro o ganho prático para quem atua ou deseja atuar com aposentadoria especial em alto nível técnico."
           />
 
           <div className="mt-12 grid gap-5 lg:grid-cols-2">
@@ -315,7 +310,7 @@ export function AposentadoriaEspecialCoursePage() {
                   <BriefcaseBusiness className="h-5 w-5" />
                 </div>
                 <h3 className="section-title text-[1.7rem] font-bold tracking-[-0.04em] text-[var(--foreground)]">
-                  Publico indicado
+                  Público indicado
                 </h3>
               </div>
 
@@ -335,7 +330,7 @@ export function AposentadoriaEspecialCoursePage() {
                   <GraduationCap className="h-5 w-5" />
                 </div>
                 <h3 className="section-title text-[1.7rem] font-bold tracking-[-0.04em] text-[var(--foreground)]">
-                  Resultado pratico esperado
+                  Resultado prático esperado
                 </h3>
               </div>
 
@@ -356,8 +351,8 @@ export function AposentadoriaEspecialCoursePage() {
         <div className="container-shell">
           <SectionHeading
             eyebrow="Professores"
-            title="Conducao por dois referenciais da pratica previdenciaria"
-            description="A estrutura dos professores acompanha o mesmo desenho das outras landings, reforcando autoridade, consistencia visual e leitura clara."
+            title="Condução por dois referenciais da prática previdenciária"
+            description="A estrutura dos professores acompanha o mesmo desenho das outras landings, reforçando autoridade, consistência visual e leitura clara."
           />
 
           <div className="mt-12 grid gap-6 lg:grid-cols-2">
@@ -398,8 +393,8 @@ export function AposentadoriaEspecialCoursePage() {
         <div className="container-shell">
           <SectionHeading
             eyebrow="Estrutura do Curso"
-            title="Tres modulos para conectar documento tecnico, prova pericial e estrategia processual"
-            description="Mantive o mesmo tratamento de cor e contraste das paginas mais recentes para que a leitura continue forte nas secoes escuras."
+            title="Três módulos para conectar documento técnico, prova pericial e estratégia processual"
+            description="Mantive o mesmo tratamento de cor e contraste das páginas mais recentes para que a leitura continue forte nas seções escuras."
             dark
           />
 
@@ -410,7 +405,7 @@ export function AposentadoriaEspecialCoursePage() {
                 className="rounded-[30px] border border-white/10 bg-white/6 p-7 backdrop-blur-sm sm:p-8"
               >
                 <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#8ea4ff]">
-                  Modulo tematico
+                  Módulo temático
                 </p>
                 <h3 className="section-title mt-3 text-[1.8rem] font-bold leading-[1.04] tracking-[-0.04em] text-white">
                   {module.title}
@@ -436,17 +431,17 @@ export function AposentadoriaEspecialCoursePage() {
         </div>
       </section>
 
-      <section className="bg-white py-20 sm:py-24">
-        <div className="container-shell grid gap-6 lg:grid-cols-[0.92fr_1.08fr]">
+      <section className="bg-[#f5f6fa] px-3 pb-20 pt-6 sm:px-5 sm:pb-24 lg:pb-28">
+        <div className="container-shell grid gap-6 lg:grid-cols-[0.92fr_1.08fr] mx-auto max-w-[1160px]">
           <div className="rounded-[30px] border border-[rgba(17,23,47,0.08)] bg-[#f7f8fc] p-7 shadow-[0_18px_40px_rgba(17,23,47,0.04)] sm:p-8">
             <div className="flex h-14 w-14 items-center justify-center rounded-[20px] bg-[#eef2ff] text-[var(--primary)]">
               <Gavel className="h-6 w-6" />
             </div>
             <h3 className="section-title mt-6 text-[1.9rem] font-bold leading-[1.04] tracking-[-0.04em] text-[var(--foreground)]">
-              Aplicacao pratica em destaque
+              Aplicação prática em destaque
             </h3>
             <p className="mt-4 text-base leading-8 text-[var(--muted-foreground)]">
-              Esta secao sintetiza o valor tecnico da imersao e mostra que o curso entrega repertorio util para atuar com aposentadoria especial desde a prova documental ate a estrategia judicial.
+              Esta seção sintetiza o valor técnico da imersão e mostra que o curso entrega repertório útil para atuar com aposentadoria especial desde a prova documental até a estratégia judicial.
             </p>
 
             <ul className="mt-6 space-y-4">
@@ -464,10 +459,10 @@ export function AposentadoriaEspecialCoursePage() {
               Chamada final
             </p>
             <h3 className="section-title mt-4 text-[2.2rem] font-extrabold leading-[1.02] tracking-[-0.05em] text-white sm:text-[2.8rem]">
-              Uma imersao para transformar prova tecnica em seguranca de atuacao na aposentadoria especial
+              Uma imersão para transformar prova técnica em segurança de atuação na aposentadoria especial
             </h3>
             <p className="mt-5 max-w-[38rem] text-base leading-8 text-white/82 sm:text-lg">
-              A ultima landing segue o mesmo padrao que consolidamos nas anteriores, com foco em contraste, clareza, autoridade docente e poder de conversao.
+              A última landing segue o mesmo padrão que consolidamos nas anteriores, com foco em contraste, clareza, autoridade docente e poder de conversão.
             </p>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -475,7 +470,7 @@ export function AposentadoriaEspecialCoursePage() {
                 href="/cadastro"
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 px-7 py-4 text-base font-semibold text-[var(--primary)] transition hover:bg-white/8"
               >
-                Garantir interesse na imersao
+                Garantir interesse na imersão
                 <ArrowRight className="h-4 w-4" />
               </Link>
 
@@ -494,25 +489,25 @@ export function AposentadoriaEspecialCoursePage() {
                   Estrutura
                 </p>
                 <p className="mt-2 text-sm leading-6 text-white/82">
-                  Hero, prova de valor, professores, modulos e CTA final.
+                  Hero, prova de valor, professores, módulos e CTA final.
                 </p>
               </div>
               <div className="rounded-[24px] border border-white/12 bg-white/8 p-5">
                 <Users className="h-5 w-5 text-white/78" />
                 <p className="mt-3 text-sm font-bold uppercase tracking-[0.16em] text-white/56">
-                  Conversao
+                  Conversão
                 </p>
                 <p className="mt-2 text-sm leading-6 text-white/82">
-                  Botoes integrados ao fluxo de cadastro ja existente no projeto.
+                  Botões integrados ao fluxo de cadastro já existente no projeto.
                 </p>
               </div>
               <div className="rounded-[24px] border border-white/12 bg-white/8 p-5">
                 <BookOpenText className="h-5 w-5 text-white/78" />
                 <p className="mt-3 text-sm font-bold uppercase tracking-[0.16em] text-white/56">
-                  Consistencia
+                  Consistência
                 </p>
                 <p className="mt-2 text-sm leading-6 text-white/82">
-                  Mesma linguagem visual, contraste e hierarquia das paginas anteriores.
+                  Mesma linguagem visual, contraste e hierarquia das páginas anteriores.
                 </p>
               </div>
             </div>
@@ -520,27 +515,7 @@ export function AposentadoriaEspecialCoursePage() {
         </div>
       </section>
 
-      <footer className="bg-[#0d1530] py-10 text-white">
-        <div className="container-shell flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-          <div>
-            <p className="section-title text-2xl font-bold tracking-[-0.04em]">
-              Instituto ESC
-            </p>
-            <p className="mt-2 text-sm text-white/62">
-              O novo ecossistema do Direito Previdenciario.
-            </p>
-          </div>
-
-          <div className="flex flex-col gap-3 text-sm text-white/72 sm:items-end">
-            <Link href="/" className="transition hover:text-white">
-              Voltar para a pagina principal
-            </Link>
-            <Link href="/cadastro" className="transition hover:text-white">
-              Ir para cadastro
-            </Link>
-          </div>
-        </div>
-      </footer>
+      <Footer copy={landingContent.pt.footer} />
     </main>
   );
 }

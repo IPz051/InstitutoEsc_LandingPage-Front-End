@@ -4,9 +4,9 @@ import { TesesRevisionaisCoursePage } from "@/components/landing/teses-revisiona
 
 export const metadata: Metadata = {
   title:
-    "Pratica: Teses Revisionais Aplicaveis aos Beneficios Nao Programaveis do RGPS | Instituto ESC",
+    "Pr?tica: Teses Revisionais Aplic?veis aos Benef?cios N?o Programaveis do RGPS | Instituto ESC",
   description:
-    "Curso presencial sobre teses revisionais aplicaveis a beneficios por incapacidade e pensao por morte no RGPS apos a EC n. 103/2019, com casos concretos e modelos praticos.",
+    "Curso presencial sobre teses revisionais aplicaveis a benef?cios por incapacidade e pens?o por morte no RGPS ap?s a EC n. 103/2019, com casos concretos e modelos pr?ticos.",
 };
 
 export default function TesesRevisionaisBeneficiosNaoProgramaveisRgspPage() {

@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title:
     "PPP e LTCAT na Aposentadoria Especial | Instituto ESC",
   description:
-    "Curso presencial sobre obtencao, retificacao e impugnacao do PPP e do LTCAT, com foco em aposentadoria especial, prova tecnica e jurisprudencia sobre EPIs.",
+    "Curso presencial sobre obten??o, retifica??o e impugna??o do PPP e do LTCAT, com foco em ap?sentadoria especial, prova t?cnica e jurisprud?ncia sobre EPIs.",
 };
 
 export default function PppLtcatAposentadoriaEspecialPage() {

@@ -19,42 +19,45 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ComponentType } from "react";
 
+import { landingContent } from "@/components/landing/content";
+import { Footer } from "@/components/landing/footer";
+
 const courseData = {
-  badge: "Curso Presencial | Direito do Trabalho e Direito Previdenciario",
+  badge: "Curso Presencial | Direito do Trabalho e Direito Previdenciário",
   title:
-    "PPP e LTCAT na Aposentadoria Especial: Obtencao, Retificacao e Impactos dos EPIs na Comprovacao do Tempo Especial",
+    "PPP e LTCAT na Aposentadoria Especial: Obtenção, Retificação e Impactos dos EPIs na Comprovação do Tempo Especial",
   description:
-    "Curso pratico e atualizado sobre a producao, obtencao, retificacao e impugnacao do PPP e do LTCAT, com foco na comprovacao do tempo especial perante o INSS e no processo judicial previdenciario.",
-  category: "Direito do Trabalho e Direito Previdenciario",
+    "Curso prático e atualizado sobre a produção, obtenção, retificação e impugnação do PPP e do LTCAT, com foco na comprovação do tempo especial perante o INSS e no processo judicial previdenciário.",
+  category: "Direito do Trabalho e Direito Previdenciário",
   duration: "11 horas",
   location: "Curso presencial",
   audience:
-    "Advogados, servidores publicos, peritos, contadores e estudantes",
+    "Advogados, servidores públicos, peritos, contadores e estudantes",
   ctaLabel: "Quero reservar minha vaga",
-  secondaryCta: "Ver conteudo programatico",
+  secondaryCta: "Ver conteúdo programático",
   paragraphs: [
-    "O curso examina, de forma pratica e atualizada, o papel do PPP e do LTCAT na comprovacao do tempo especial para fins de aposentadoria especial, abordando tanto os aspectos trabalhistas quanto previdenciarios envolvidos na producao e utilizacao dessa prova tecnica.",
-    "Serao analisados os caminhos juridicos para obtencao, retificacao e impugnacao do PPP, inclusive por meio de acao na Justica do Trabalho, bem como os reflexos desses documentos no reconhecimento do tempo especial perante o INSS e no processo judicial previdenciario.",
-    "O curso tambem examina a jurisprudencia recente dos Tribunais Superiores sobre a eficacia dos Equipamentos de Protecao Individual (EPIs), com destaque para os precedentes vinculantes do STF e do STJ.",
-    "A partir da experiencia dos professores e da analise de casos concretos e estrategias processuais, os participantes terao contato com tecnicas de atuacao profissional voltadas a construcao da prova do tempo especial e a conducao de demandas previdenciarias envolvendo aposentadoria especial.",
+    "O curso examina, de forma prática e atualizada, o papel do PPP e do LTCAT na comprovação do tempo especial para fins de aposentadoria especial, abordando tanto os aspectos trabalhistas quanto previdenciários envolvidos na produção e utilização dessa prova técnica.",
+    "Serão analisados os caminhos jurídicos para obtenção, retificação e impugnação do PPP, inclusive por meio de ação na Justiça do Trabalho, bem como os reflexos desses documentos no reconhecimento do tempo especial perante o INSS e no processo judicial previdenciário.",
+    "O curso também examina a jurisprudência recente dos Tribunais Superiores sobre a eficácia dos Equipamentos de Proteção Individual (EPIs), com destaque para os precedentes vinculantes do STF e do STJ.",
+    "A partir da experiência dos professores e da análise de casos concretos e estratégias processuais, os participantes terão contato com técnicas de atuação profissional voltadas à construção da prova do tempo especial e à condução de demandas previdenciárias envolvendo aposentadoria especial.",
   ],
   highlights: [
-    "Obtencao, retificacao e impugnacao do PPP e do LTCAT",
-    "Atuacao na Justica do Trabalho e no contencioso previdenciario",
-    "Jurisprudencia atual sobre EPI nos Tribunais Superiores",
-    "Casos concretos e estrategias processuais aplicaveis a pratica",
+    "Obtenção, retificação e impugnação do PPP e do LTCAT",
+    "Atuação na Justiça do Trabalho e no contencioso previdenciário",
+    "Jurisprudência atual sobre EPI nos Tribunais Superiores",
+    "Casos concretos e estratégias processuais aplicáveis à prática",
   ],
   audienceList: [
     "Advogados previdenciaristas e trabalhistas que desejam aprofundar a prova do tempo especial.",
-    "Servidores publicos e peritos que atuam com documentacao tecnica e analise de condicoes especiais de trabalho.",
-    "Contadores e profissionais que auxiliam na organizacao da prova tecnica para demandas previdenciarias.",
-    "Estudantes e profissionais em formacao que buscam repertorio pratico e atualizado sobre aposentadoria especial.",
+    "Servidores públicos e peritos que atuam com documentação técnica e análise de condições especiais de trabalho.",
+    "Contadores e profissionais que auxiliam na organização da prova técnica para demandas previdenciárias.",
+    "Estudantes e profissionais em formação que buscam repertório prático e atualizado sobre aposentadoria especial.",
   ],
   takeaways: [
-    "Estruturar a prova tecnica do tempo especial com mais seguranca.",
-    "Escolher a via adequada para obtencao ou retificacao do PPP.",
-    "Usar precedentes do STF e do STJ de forma estrategica.",
-    "Conduzir demandas previdenciarias com foco em prova e resultado.",
+    "Estruturar a prova técnica do tempo especial com mais segurança.",
+    "Escolher a via adequada para obtenção ou retificação do PPP.",
+    "Usar precedentes do STF e do STJ de forma estratégica.",
+    "Conduzir demandas previdenciárias com foco em prova e resultado.",
   ],
   professors: [
     {
@@ -62,58 +65,58 @@ const courseData = {
       role: "Prof. Parte I",
       imageSrc: "/9-professores/carlos-alberto-pereira-de-castro.png",
       description:
-        "Diretor de Relacionamento com o Direito do Trabalho do IBDP. Juiz do Trabalho da 12a Regiao-SC. Doutorando em Ciencias Juridicas pela Universidade Autonoma de Lisboa. Coautor de obras de referencia em Direito Previdenciario.",
+        "Diretor de Relacionamento com o Direito do Trabalho do IBDP. Juiz do Trabalho da 12ª Região-SC. Doutorando em Ciências Jurídicas pela Universidade Autônoma de Lisboa. Coautor de obras de referência em Direito Previdenciário.",
     },
     {
-      name: "Joao Batista Lazzari",
+      name: "João Batista Lazzari",
       role: "Prof. Parte II e Parte III",
       imageSrc: "/9-professores/joao-batista-lazzari.png",
       description:
-        "Diretor de Processo Judicial Previdenciario do IBDP. Pos-doutor em Direito e Justica Constitucional. Juiz Federal do TRF da 4a Regiao (1996-2023). Coautor de obras classicas em Direito Previdenciario e pratica processual.",
+        "Diretor de Processo Judicial Previdenciário do IBDP. Pós-doutor em Direito e Justiça Constitucional. Juiz Federal do TRF da 4ª Região (1996-2023). Coautor de obras clássicas em Direito Previdenciário e prática processual.",
     },
   ],
   modules: [
     {
       title: "Parte I | Prof. Carlos Alberto Pereira de Castro",
-      subtitle: "PPP/LTCAT: producao da prova e aspectos trabalhistas",
+      subtitle: "PPP/LTCAT: produção da prova e aspectos trabalhistas",
       items: [
-        "Comprovacao da atividade especial: conceitos e fundamentos normativos.",
+        "Comprovação da atividade especial: conceitos e fundamentos normativos.",
         "Prova pericial: modalidades indireta, por similaridade e banco de laudos.",
-        "Acao na Justica do Trabalho para obtencao e retificacao do PPP e do LTCAT.",
-        "Cabimento, fundamentos juridicos, prazos e procedimento.",
-        "Estrutura da peticao inicial e producao de provas com enfase na pericia.",
-        "Efeitos da decisao judicial sobre o PPP e o LTCAT.",
-        "Interferencia da aposentadoria especial no contrato de trabalho.",
+        "Ação na Justiça do Trabalho para obtenção e retificação do PPP e do LTCAT.",
+        "Cabimento, fundamentos jurídicos, prazos e procedimento.",
+        "Estrutura da petição inicial e produção de provas com ênfase na perícia.",
+        "Efeitos da decisão judicial sobre o PPP e o LTCAT.",
+        "Interferência da aposentadoria especial no contrato de trabalho.",
       ],
     },
     {
-      title: "Parte II | Prof. Joao Batista Lazzari",
-      subtitle: "Tempo especial: aspectos previdenciarios",
+      title: "Parte II | Prof. João Batista Lazzari",
+      subtitle: "Tempo especial: aspectos previdenciários",
       items: [
-        "Reconhecimento do tempo especial e seus efeitos praticos.",
-        "Jurisprudencia e evolucao normativa sobre o tema.",
-        "Questoes controvertidas envolvendo atividades perigosas, eletricitarios, frentistas e atividades penosas.",
-        "EPI na jurisprudencia previdenciaria: STF Tema 555.",
-        "EPI na jurisprudencia previdenciaria: STJ Tema 1090.",
+        "Reconhecimento do tempo especial e seus efeitos práticos.",
+        "Jurisprudência e evolução normativa sobre o tema.",
+        "Questões controvertidas envolvendo atividades perigosas, eletricitários, frentistas e atividades penosas.",
+        "EPI na jurisprudência previdenciária: STF Tema 555.",
+        "EPI na jurisprudência previdenciária: STJ Tema 1090.",
         "IRDR Tema 15 do TRF4 e Tema 213 da TNU.",
-        "Estrategias processuais para descaracterizar os efeitos do EPI a luz das teses fixadas pelo STJ.",
+        "Estratégias processuais para descaracterizar os efeitos do EPI à luz das teses fixadas pelo STJ.",
       ],
     },
     {
-      title: "Parte III | Professores Carlos Alberto Pereira de Castro e Joao Batista Lazzari",
-      subtitle: "Casos concretos e estrategia aplicada",
+      title: "Parte III | Professores Carlos Alberto Pereira de Castro e João Batista Lazzari",
+      subtitle: "Casos concretos e estratégia aplicada",
       items: [
-        "Casos concretos de obtencao e revisao de PPP na Justica do Trabalho.",
-        "Casos concretos com analise de provas em acoes previdenciarias.",
-        "Dicas de elaboracao de peticoes na Justica do Trabalho e na Justica Federal.",
+        "Casos concretos de obtenção e revisão de PPP na Justiça do Trabalho.",
+        "Casos concretos com análise de provas em ações previdenciárias.",
+        "Dicas de elaboração de petições na Justiça do Trabalho e na Justiça Federal.",
       ],
     },
   ],
   jurisprudence: [
     "STF Tema 1209 sobre atividades perigosas, com destaque para vigilantes.",
-    "STF Tema 555 sobre eficacia dos Equipamentos de Protecao Individual.",
+    "STF Tema 555 sobre eficácia dos Equipamentos de Proteção Individual.",
     "STJ Tema 1090 e seus reflexos na prova do tempo especial.",
-    "TRF4 IRDR Tema 15 e TNU Tema 213 na interpretacao da materia.",
+    "TRF4 IRDR Tema 15 e TNU Tema 213 na interpretação da matéria.",
   ],
 };
 
@@ -184,15 +187,7 @@ export function PppLtcatCoursePage() {
         <div className="container-shell relative z-10 pb-18">
           <div className="flex flex-col gap-14 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-[760px]">
-              <Link
-                href="/"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--primary)] transition hover:text-[#2845a8]"
-              >
-                <ArrowRight className="h-4 w-4 rotate-180" />
-                Voltar para a landing principal
-              </Link>
-
-              <div className="mt-8 inline-flex items-center gap-2 rounded-full border border-[rgba(46,79,190,0.12)] bg-white/92 px-4 py-2 text-sm font-semibold text-[var(--primary)] shadow-[0_10px_30px_rgba(46,79,190,0.08)] backdrop-blur-sm">
+              <div className="inline-flex items-center gap-2 rounded-full border border-[rgba(46,79,190,0.12)] bg-white/92 px-4 py-2 text-sm font-semibold text-[var(--primary)] shadow-[0_10px_30px_rgba(46,79,190,0.08)] backdrop-blur-sm">
                 <span className="h-2.5 w-2.5 rounded-full bg-[var(--secondary)]" />
                 {courseData.badge}
               </div>
@@ -225,8 +220,8 @@ export function PppLtcatCoursePage() {
             </div>
 
             <div className="grid w-full max-w-[420px] gap-4 sm:grid-cols-2 lg:grid-cols-1">
-              <StatCard icon={Clock3} label="Duracao" value={courseData.duration} />
-              <StatCard icon={Scale} label="Materia" value={courseData.category} />
+              <StatCard icon={Clock3} label="Duração" value={courseData.duration} />
+              <StatCard icon={Scale} label="Matéria" value={courseData.category} />
               <StatCard icon={MapPin} label="Formato" value={courseData.location} />
               <StatCard icon={Users} label="Indicado para" value={courseData.audience} />
             </div>
@@ -238,9 +233,9 @@ export function PppLtcatCoursePage() {
         <div className="container-shell grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
           <div>
             <SectionHeading
-              eyebrow="Visao Geral"
-              title="Prova tecnica, estrategia processual e leitura jurisprudencial em uma mesma imersao"
-              description="A estrutura da pagina segue uma narrativa de conversao, mas o conteudo foi construido para valorizar profundidade tecnica, aplicacao pratica e posicionamento do Instituto ESC."
+              eyebrow="Visão Geral"
+              title="Prova técnica, estratégia processual e leitura jurisprudencial em uma mesma imersão"
+              description="A estrutura da página segue uma narrativa de conversão, mas o conteúdo foi construído para valorizar profundidade técnica, aplicação prática e posicionamento do Instituto ESC."
             />
 
             <div className="mt-8 space-y-5 text-base leading-8 text-[var(--muted-foreground)] sm:text-lg">
@@ -270,10 +265,10 @@ export function PppLtcatCoursePage() {
 
             <div className="mt-8 rounded-[24px] bg-[var(--foreground)] p-6 text-white">
               <p className="text-xs font-bold uppercase tracking-[0.24em] text-white/55">
-                Diferencial da imersao
+                Diferencial da imersão
               </p>
               <p className="mt-3 text-base leading-7 text-white/82">
-                O curso conecta a producao da prova na esfera trabalhista com o aproveitamento do material probatorio no contencioso previdenciario, incluindo a discussao atual sobre EPI nos precedentes vinculantes.
+                O curso conecta a produção da prova na esfera trabalhista com o aproveitamento do material probatório no contencioso previdenciário, incluindo a discussão atual sobre EPI nos precedentes vinculantes.
               </p>
             </div>
           </div>
@@ -284,8 +279,8 @@ export function PppLtcatCoursePage() {
         <div className="container-shell">
           <SectionHeading
             eyebrow="Para Quem"
-            title="Pensado para quem precisa atuar com profundidade tecnica e seguranca estrategica"
-            description="A imersao foi desenhada para profissionais que lidam com prova tecnica, aposentadoria especial e litigancia previdenciaria de forma pratica."
+            title="Pensado para quem precisa atuar com profundidade técnica e segurança estratégica"
+            description="A imersão foi desenhada para profissionais que lidam com prova técnica, aposentadoria especial e litigância previdenciária de forma prática."
           />
 
           <div className="mt-12 grid gap-5 lg:grid-cols-2">
@@ -295,7 +290,7 @@ export function PppLtcatCoursePage() {
                   <BriefcaseBusiness className="h-5 w-5" />
                 </div>
                 <h3 className="section-title text-[1.7rem] font-bold tracking-[-0.04em] text-[var(--foreground)]">
-                  Publico indicado
+                  Público indicado
                 </h3>
               </div>
 
@@ -315,7 +310,7 @@ export function PppLtcatCoursePage() {
                   <GraduationCap className="h-5 w-5" />
                 </div>
                 <h3 className="section-title text-[1.7rem] font-bold tracking-[-0.04em] text-[var(--foreground)]">
-                  Resultado pratico esperado
+                  Resultado prático esperado
                 </h3>
               </div>
 
@@ -336,8 +331,8 @@ export function PppLtcatCoursePage() {
         <div className="container-shell">
           <SectionHeading
             eyebrow="Professores"
-            title="Docentes com repertorio pratico e autoridade no tema"
-            description="A conducao da imersao reune experiencia judicial, producao academica e vivencia direta com o contencioso previdenciario e trabalhista."
+            title="Docentes com repertório prático e autoridade no tema"
+            description="A condução da imersão reúne experiência judicial, produção acadêmica e vivência direta com o contencioso previdenciário e trabalhista."
           />
 
           <div className="mt-12 grid gap-6 lg:grid-cols-2">
@@ -377,9 +372,9 @@ export function PppLtcatCoursePage() {
       <section id="conteudo" className="bg-[#dde0e7] py-20 text-white sm:py-24">
         <div className="container-shell">
           <SectionHeading
-            eyebrow="Conteudo Programatico"
-            title="Um percurso estruturado da prova tecnica a estrategia processual"
-            description="O curso foi dividido em tres partes para conectar base normativa, tecnica de prova, jurisprudencia e aplicacao pratica em casos concretos."
+            eyebrow="Conteúdo Programático"
+            title="Um percurso estruturado da prova técnica à estratégia processual"
+            description="O curso foi dividido em três partes para conectar base normativa, técnica de prova, jurisprudência e aplicação prática em casos concretos."
           />
 
           <div className="mt-12 grid gap-6">
@@ -391,7 +386,7 @@ export function PppLtcatCoursePage() {
                 <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
                   <div>
                     <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#121d42]">
-                      Modulo tematico
+                      Módulo temático
                     </p>
                     <h3 className="section-title mt-3 text-[1.8rem] font-bold leading-[1.04] tracking-[-0.04em] text-[#121d42]">
                       {module.title}
@@ -419,17 +414,17 @@ export function PppLtcatCoursePage() {
         </div>
       </section>
 
-      <section className="bg-white py-20 sm:py-24">
-        <div className="container-shell grid gap-6 lg:grid-cols-[0.92fr_1.08fr]">
+      <section className="bg-[#f5f6fa] px-3 pb-20 pt-6 sm:px-5 sm:pb-24 lg:pb-28">
+        <div className="container-shell grid gap-6 lg:grid-cols-[0.92fr_1.08fr] mx-auto max-w-[1160px]">
           <div className="rounded-[30px] border border-[rgba(17,23,47,0.08)] bg-[#f7f8fc] p-7 shadow-[0_18px_40px_rgba(17,23,47,0.04)] sm:p-8">
             <div className="flex h-14 w-14 items-center justify-center rounded-[20px] bg-[#eef2ff] text-[var(--primary)]">
               <Gavel className="h-6 w-6" />
             </div>
             <h3 className="section-title mt-6 text-[1.9rem] font-bold leading-[1.04] tracking-[-0.04em] text-[var(--foreground)]">
-              Jurisprudencia em destaque
+              Jurisprudência em destaque
             </h3>
             <p className="mt-4 text-base leading-8 text-[var(--muted-foreground)]">
-              A pagina reforca o valor tecnico do curso ao destacar os precedentes que impactam diretamente a construcao e a contestacao da prova do tempo especial.
+              A página reforça o valor técnico do curso ao destacar os precedentes que impactam diretamente a construção e a contestação da prova do tempo especial.
             </p>
 
             <ul className="mt-6 space-y-4">
@@ -447,10 +442,10 @@ export function PppLtcatCoursePage() {
               Chamada final
             </p>
             <h3 className="section-title mt-4 text-[2.2rem] font-extrabold leading-[1.02] tracking-[-0.05em] text-white sm:text-[2.8rem]">
-              Uma imersao para transformar prova tecnica em estrategia de resultado
+              Uma imersão para transformar prova técnica em estratégia de resultado
             </h3>
             <p className="mt-5 max-w-[38rem] text-base leading-8 text-white/82 sm:text-lg">
-              Se a sua atuacao exige dominio de PPP, LTCAT, pericia, EPI e aposentadoria especial, esta pagina agora conta com uma rota propria para apresentar o curso com profundidade e mais poder de conversao.
+              Se a sua atuação exige domínio de PPP, LTCAT, perícia, EPI e aposentadoria especial, esta página agora conta com uma rota própria para apresentar o curso com profundidade e mais poder de conversão.
             </p>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -458,7 +453,7 @@ export function PppLtcatCoursePage() {
                 href="/cadastro"
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 px-7 py-4 text-base font-semibold text-[var(--primary)] transition hover:bg-white/8"
               >
-                Garantir interesse na imersao
+                Garantir interesse na imersão
                 <ArrowRight className="h-4 w-4" />
               </Link>
 
@@ -477,22 +472,22 @@ export function PppLtcatCoursePage() {
                   Estrutura
                 </p>
                 <p className="mt-2 text-sm leading-6 text-white/82">
-                  Hero, prova de valor, professores, conteudo e CTA final.
+                  Hero, prova de valor, professores, conteúdo e CTA final.
                 </p>
               </div>
               <div className="rounded-[24px] border border-white/12 bg-white/8 p-5">
                 <Users className="h-5 w-5 text-white/78" />
                 <p className="mt-3 text-sm font-bold uppercase tracking-[0.16em] text-white/56">
-                  Conversao
+                  Conversão
                 </p>
                 <p className="mt-2 text-sm leading-6 text-white/82">
-                  Botoes claros direcionando para o fluxo de cadastro ja existente.
+                  Botões claros direcionando para o fluxo de cadastro já existente.
                 </p>
               </div>
               <div className="rounded-[24px] border border-white/12 bg-white/8 p-5">
                 <BookOpenText className="h-5 w-5 text-white/78" />
                 <p className="mt-3 text-sm font-bold uppercase tracking-[0.16em] text-white/56">
-                  Consistencia
+                  Consistência
                 </p>
                 <p className="mt-2 text-sm leading-6 text-white/82">
                   Mesma paleta, tipografia e linguagem visual do restante do site.
@@ -503,27 +498,7 @@ export function PppLtcatCoursePage() {
         </div>
       </section>
 
-      <footer className="bg-[#0d1530] py-10 text-white">
-        <div className="container-shell flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-          <div>
-            <p className="section-title text-2xl font-bold tracking-[-0.04em]">
-              Instituto ESC
-            </p>
-            <p className="mt-2 text-sm text-white/62">
-              O novo ecossistema do Direito Previdenciario.
-            </p>
-          </div>
-
-          <div className="flex flex-col gap-3 text-sm text-white/72 sm:items-end">
-            <Link href="/" className="transition hover:text-white">
-              Voltar para a pagina principal
-            </Link>
-            <Link href="/cadastro" className="transition hover:text-white">
-              Ir para cadastro
-            </Link>
-          </div>
-        </div>
-      </footer>
+      <Footer copy={landingContent.pt.footer} />
     </main>
   );
 }

@@ -19,92 +19,95 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ComponentType } from "react";
 
+import { landingContent } from "@/components/landing/content";
+import { Footer } from "@/components/landing/footer";
+
 const courseData = {
-  badge: "Curso Presencial | Direito Previdenciario",
-  title: "PRATICA: MANDADO DE SEGURANCA EM MATERIA PREVIDENCIARIA",
+  badge: "Curso Presencial | Direito Previdenciário",
+  title: "PRÁTICA: MANDADO DE SEGURANÇA EM MATÉRIA PREVIDENCIÁRIA",
   description:
-    "Imersao voltada a estrutura, cabimento e uso estrategico do mandado de seguranca em materia previdenciaria, com abordagem pratica, leitura jurisprudencial e resolucao de casos concretos.",
-  category: "Direito Previdenciario",
+    "Imersão voltada à estrutura, cabimento e uso estratégico do mandado de segurança em matéria previdenciária, com abordagem prática, leitura jurisprudencial e resolução de casos concretos.",
+  category: "Direito Previdenciário",
   duration: "8 horas",
   location: "Curso presencial",
   audience:
-    "Advogados, estudantes e profissionais que atuam com contencioso previdenciario",
+    "Advogados, estudantes e profissionais que atuam com contencioso previdenciário",
   ctaLabel: "Quero reservar minha vaga",
-  secondaryCta: "Ver conteudo programatico",
+  secondaryCta: "Ver conteúdo programático",
   paragraphs: [
-    "A landing foi estruturada para apresentar, de forma clara e tecnica, os principais fundamentos do mandado de seguranca aplicado a materia previdenciaria, destacando tanto os requisitos juridicos quanto a estrategia pratica de utilizacao da medida.",
-    "O curso passa pelo conceito constitucional do mandado de seguranca, pela ideia de direito liquido e certo, pela identificacao da autoridade coatora e pelas diferencas entre mandado de seguranca individual, coletivo, preventivo e repressivo.",
-    "Tambem sao enfrentados os aspectos processuais mais relevantes previstos na Lei 12.016/2009, incluindo competencia, liminar, recursos cabiveis e hipoteses de nao cabimento, com atencao especial ao uso da medida nos Juizados Especiais Federais.",
-    "O desenvolvimento do conteudo parte de material de leitura previa e evolui para a exposicao dos temas por meio da solucao de casos concretos, aproximando a teoria da rotina profissional do advogado previdenciarista.",
+    "A landing foi estruturada para apresentar, de forma clara e técnica, os principais fundamentos do mandado de segurança aplicado à matéria previdenciária, destacando tanto os requisitos jurídicos quanto a estratégia prática de utilização da medida.",
+    "O curso passa pelo conceito constitucional do mandado de segurança, pela ideia de direito líquido e certo, pela identificação da autoridade coatora e pelas diferenças entre mandado de segurança individual, coletivo, preventivo e repressivo.",
+    "Também são enfrentados os aspectos processuais mais relevantes previstos na Lei 12.016/2009, incluindo competência, liminar, recursos cabíveis e hipóteses de não cabimento, com atenção especial ao uso da medida nos Juizados Especiais Federais.",
+    "O desenvolvimento do conteúdo parte de material de leitura prévia e evolui para a exposição dos temas por meio da solução de casos concretos, aproximando a teoria da rotina profissional do advogado previdenciarista.",
   ],
   highlights: [
-    "Leitura pratica do mandado de seguranca no contencioso previdenciario.",
-    "Analise dos requisitos constitucionais e processuais da medida.",
-    "Jurisprudencia atual do STF e do STJ aplicada a casos reais.",
-    "Discussao estrategica sobre cabimento, liminar e recursos.",
+    "Leitura prática do mandado de segurança no contencioso previdenciário.",
+    "Análise dos requisitos constitucionais e processuais da medida.",
+    "Jurisprudência atual do STF e do STJ aplicada a casos reais.",
+    "Discussão estratégica sobre cabimento, liminar e recursos.",
   ],
   audienceList: [
-    "Advogados que precisam usar o mandado de seguranca com mais seguranca tecnica em demandas previdenciarias.",
-    "Profissionais que atuam com medidas urgentes, ilegalidade administrativa e tutela de direito liquido e certo.",
-    "Estudantes e pesquisadores interessados em aprofundar a pratica processual previdenciaria com enfoque constitucional.",
-    "Participantes que buscam conectar teoria, jurisprudencia e estrategia a partir de casos concretos.",
+    "Advogados que precisam usar o mandado de segurança com mais segurança técnica em demandas previdenciárias.",
+    "Profissionais que atuam com medidas urgentes, ilegalidade administrativa e tutela de direito líquido e certo.",
+    "Estudantes e pesquisadores interessados em aprofundar a prática processual previdenciária com enfoque constitucional.",
+    "Participantes que buscam conectar teoria, jurisprudência e estratégia a partir de casos concretos.",
   ],
   takeaways: [
-    "Identificar quando o mandado de seguranca e a via adequada no caso previdenciario.",
-    "Estruturar pedidos, liminares e recursos com mais clareza tecnica.",
-    "Reconhecer hipoteses de nao cabimento e reduzir erros estrategicos.",
-    "Aplicar precedentes do STF e do STJ com utilidade pratica na atuacao diaria.",
+    "Identificar quando o mandado de segurança é a via adequada no caso previdenciário.",
+    "Estruturar pedidos, liminares e recursos com mais clareza técnica.",
+    "Reconhecer hipóteses de não cabimento e reduzir erros estratégicos.",
+    "Aplicar precedentes do STF e do STJ com utilidade prática na atuação diária.",
   ],
   professor: {
-    name: "Marco Aurelio Serau Junior",
-    role: "Professor da imersao",
+    name: "Marco Aurélio Serau Junior",
+    role: "Professor da imersão",
     imageSrc: "/9-professores/marco-aurilio-serau-junior.png",
     description:
-      "Professor da UFPR, doutor e mestre pela USP, advogado e consultor. Ex-assessor na Vice-Presidencia do TRF da 3a Regiao, autor e coordenador de diversas obras juridicas e diretor cientifico do IEPREV.",
+      "Professor da UFPR, doutor e mestre pela USP, advogado e consultor. Ex-assessor na Vice-Presidência do TRF da 3ª Região, autor e coordenador de diversas obras jurídicas e diretor científico do IEPREV.",
   },
   modules: [
     {
-      title: "Fundamentos do mandado de seguranca",
-      subtitle: "Base conceitual e constitucional para aplicacao em materia previdenciaria",
+      title: "Fundamentos do mandado de segurança",
+      subtitle: "Base conceitual e constitucional para aplicação em matéria previdenciária",
       items: [
-        "Conceito de mandado de seguranca.",
-        "Mandado de seguranca na Constituicao Federal.",
-        "Direito liquido e certo.",
+        "Conceito de mandado de segurança.",
+        "Mandado de segurança na Constituição Federal.",
+        "Direito líquido e certo.",
         "Abuso de direito e ilegalidade.",
         "Autoridade coatora.",
-        "Mandado de seguranca individual e coletivo.",
-        "Mandado de seguranca preventivo e repressivo.",
+        "Mandado de segurança individual e coletivo.",
+        "Mandado de segurança preventivo e repressivo.",
       ],
     },
     {
-      title: "Rito processual e estrutura de atuacao",
-      subtitle: "Lei 12.016/2009, competencia e tecnica processual",
+      title: "Rito processual e estrutura de atuação",
+      subtitle: "Lei 12.016/2009, competência e técnica processual",
       items: [
-        "Rito processual do mandado de seguranca segundo a Lei 12.016/2009.",
-        "Competencia para julgamento.",
-        "Liminar e seus requisitos praticos.",
-        "Hipoteses de nao cabimento do mandado de seguranca.",
-        "Recursos cabiveis.",
-        "Mandado de seguranca nos Juizados Especiais Federais.",
+        "Rito processual do mandado de segurança segundo a Lei 12.016/2009.",
+        "Competência para julgamento.",
+        "Liminar e seus requisitos práticos.",
+        "Hipóteses de não cabimento do mandado de segurança.",
+        "Recursos cabíveis.",
+        "Mandado de segurança nos Juizados Especiais Federais.",
       ],
     },
     {
-      title: "Jurisprudencia e aplicacao em casos concretos",
-      subtitle: "Estudo orientado por leitura previa e resolucao pratica",
+      title: "Jurisprudência e aplicação em casos concretos",
+      subtitle: "Estudo orientado por leitura prévia e resolução prática",
       items: [
-        "Encaminhamento de material de leitura previa aos alunos para compreensao inicial da materia.",
-        "Exposicao do conteudo programatico por meio da solucao de casos concretos.",
-        "Jurisprudencia do STF sobre mandado de seguranca.",
-        "Jurisprudencia do STJ sobre mandado de seguranca.",
-        "Leitura estrategica dos precedentes para definicao de cabimento e melhor via processual.",
+        "Encaminhamento de material de leitura prévia aos alunos para compreensão inicial da matéria.",
+        "Exposição do conteúdo programático por meio da solução de casos concretos.",
+        "Jurisprudência do STF sobre mandado de segurança.",
+        "Jurisprudência do STJ sobre mandado de segurança.",
+        "Leitura estratégica dos precedentes para definição de cabimento e melhor via processual.",
       ],
     },
   ],
   jurisprudence: [
-    "Jurisprudencia do STF sobre direito liquido e certo, limites do writ e controle de ilegalidade.",
-    "Jurisprudencia do STJ sobre cabimento, recursos e utilizacao da medida em materia previdenciaria.",
-    "Discussao aplicada sobre liminar, competencia e hipoteses de nao cabimento.",
-    "Interacao entre fundamento constitucional, lei especial e pratica forense previdenciaria.",
+    "Jurisprudência do STF sobre direito líquido e certo, limites do writ e controle de ilegalidade.",
+    "Jurisprudência do STJ sobre cabimento, recursos e utilização da medida em matéria previdenciária.",
+    "Discussão aplicada sobre liminar, competência e hipóteses de não cabimento.",
+    "Interação entre fundamento constitucional, lei especial e prática forense previdenciária.",
   ],
 };
 
@@ -189,15 +192,7 @@ export function MandadoSegurancaCoursePage() {
         <div className="container-shell relative z-10 pb-18">
           <div className="flex flex-col gap-14 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-[760px]">
-              <Link
-                href="/"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--primary)] transition hover:text-[#2845a8]"
-              >
-                <ArrowRight className="h-4 w-4 rotate-180" />
-                Voltar para a landing principal
-              </Link>
-
-              <div className="mt-8 inline-flex items-center gap-2 rounded-full border border-[rgba(46,79,190,0.12)] bg-white/92 px-4 py-2 text-sm font-semibold text-[var(--primary)] shadow-[0_10px_30px_rgba(46,79,190,0.08)] backdrop-blur-sm">
+              <div className="inline-flex items-center gap-2 rounded-full border border-[rgba(46,79,190,0.12)] bg-white/92 px-4 py-2 text-sm font-semibold text-[var(--primary)] shadow-[0_10px_30px_rgba(46,79,190,0.08)] backdrop-blur-sm">
                 <span className="h-2.5 w-2.5 rounded-full bg-[var(--secondary)]" />
                 {courseData.badge}
               </div>
@@ -230,8 +225,8 @@ export function MandadoSegurancaCoursePage() {
             </div>
 
             <div className="grid w-full max-w-[420px] gap-4 sm:grid-cols-2 lg:grid-cols-1">
-              <StatCard icon={Clock3} label="Duracao" value={courseData.duration} />
-              <StatCard icon={Scale} label="Materia" value={courseData.category} />
+              <StatCard icon={Clock3} label="Duração" value={courseData.duration} />
+              <StatCard icon={Scale} label="Matéria" value={courseData.category} />
               <StatCard icon={MapPin} label="Formato" value={courseData.location} />
               <StatCard icon={Users} label="Indicado para" value={courseData.audience} />
             </div>
@@ -243,9 +238,9 @@ export function MandadoSegurancaCoursePage() {
         <div className="container-shell grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
           <div>
             <SectionHeading
-              eyebrow="Visao Geral"
-              title="Cabimento, tecnica processual e leitura estrategica do writ previdenciario"
-              description="A pagina segue o padrao visual da primeira imersao, com foco em clareza de leitura, destaque para a autoridade do professor e boa hierarquia de informacoes."
+              eyebrow="Visão Geral"
+              title="Cabimento, técnica processual e leitura estratégica do writ previdenciário"
+              description="A página segue o padrão visual da primeira imersão, com foco em clareza de leitura, destaque para a autoridade do professor e boa hierarquia de informações."
             />
 
             <div className="mt-8 space-y-5 text-base leading-8 text-[var(--muted-foreground)] sm:text-lg">
@@ -275,10 +270,10 @@ export function MandadoSegurancaCoursePage() {
 
             <div className="mt-8 rounded-[24px] bg-[var(--foreground)] p-6 text-white">
               <p className="text-xs font-bold uppercase tracking-[0.24em] text-white/55">
-                Diferencial da imersao
+                Diferencial da imersão
               </p>
               <p className="mt-3 text-base leading-7 text-white/82">
-                O conteudo combina base constitucional, leitura da lei especial, analise jurisprudencial e aplicacao em casos concretos para tornar o mandado de seguranca uma ferramenta estrategica de atuacao.
+                O conteúdo combina base constitucional, leitura da lei especial, análise jurisprudencial e aplicação em casos concretos para tornar o mandado de segurança uma ferramenta estratégica de atuação.
               </p>
             </div>
           </div>
@@ -289,8 +284,8 @@ export function MandadoSegurancaCoursePage() {
         <div className="container-shell">
           <SectionHeading
             eyebrow="Para Quem"
-            title="Feita para quem precisa decidir com seguranca quando e como usar o mandado de seguranca"
-            description="A imersao favorece profissionais que precisam traduzir urgencia, ilegalidade e direito liquido e certo em estrategia processual consistente."
+            title="Feita para quem precisa decidir com segurança quando e como usar o mandado de segurança"
+            description="A imersão favorece profissionais que precisam traduzir urgência, ilegalidade e direito líquido e certo em estratégia processual consistente."
           />
 
           <div className="mt-12 grid gap-5 lg:grid-cols-2">
@@ -300,7 +295,7 @@ export function MandadoSegurancaCoursePage() {
                   <BriefcaseBusiness className="h-5 w-5" />
                 </div>
                 <h3 className="section-title text-[1.7rem] font-bold tracking-[-0.04em] text-[var(--foreground)]">
-                  Publico indicado
+                  Público indicado
                 </h3>
               </div>
 
@@ -320,7 +315,7 @@ export function MandadoSegurancaCoursePage() {
                   <GraduationCap className="h-5 w-5" />
                 </div>
                 <h3 className="section-title text-[1.7rem] font-bold tracking-[-0.04em] text-[var(--foreground)]">
-                  Resultado pratico esperado
+                  Resultado prático esperado
                 </h3>
               </div>
 
@@ -341,8 +336,8 @@ export function MandadoSegurancaCoursePage() {
         <div className="container-shell">
           <SectionHeading
             eyebrow="Professor"
-            title="Conteudo conduzido por Marco Aurelio Serau Junior"
-            description="A secao reforca autoridade academica e pratica profissional sem perder a mesma linguagem visual adotada no restante da pagina."
+            title="Conteúdo conduzido por Marco Aurélio Serau Junior"
+            description="A seção reforça autoridade acadêmica e prática profissional sem perder a mesma linguagem visual adotada no restante da página."
           />
 
           <article className="mt-12 overflow-hidden rounded-[30px] border border-[rgba(17,23,47,0.08)] bg-[#f7f8fc] shadow-[0_18px_40px_rgba(17,23,47,0.04)]">
@@ -371,7 +366,7 @@ export function MandadoSegurancaCoursePage() {
                   <div className="rounded-[22px] bg-white p-5 shadow-[0_10px_24px_rgba(17,23,47,0.04)]">
                     <Scale className="h-5 w-5 text-[var(--primary)]" />
                     <p className="mt-3 text-sm font-bold uppercase tracking-[0.14em] text-[var(--primary)]">
-                      Base tecnica
+                      Base técnica
                     </p>
                     <p className="mt-2 text-sm leading-6 text-[var(--muted-foreground)]">
                       Enfoque constitucional, legal e jurisprudencial.
@@ -380,19 +375,19 @@ export function MandadoSegurancaCoursePage() {
                   <div className="rounded-[22px] bg-white p-5 shadow-[0_10px_24px_rgba(17,23,47,0.04)]">
                     <Gavel className="h-5 w-5 text-[var(--primary)]" />
                     <p className="mt-3 text-sm font-bold uppercase tracking-[0.14em] text-[var(--primary)]">
-                      Aplicacao
+                      Aplicação
                     </p>
                     <p className="mt-2 text-sm leading-6 text-[var(--muted-foreground)]">
-                      Conteudo desenvolvido com casos concretos.
+                      Conteúdo desenvolvido com casos concretos.
                     </p>
                   </div>
                   <div className="rounded-[22px] bg-white p-5 shadow-[0_10px_24px_rgba(17,23,47,0.04)]">
                     <BookOpenText className="h-5 w-5 text-[var(--primary)]" />
                     <p className="mt-3 text-sm font-bold uppercase tracking-[0.14em] text-[var(--primary)]">
-                      Preparacao
+                      Preparação
                     </p>
                     <p className="mt-2 text-sm leading-6 text-[var(--muted-foreground)]">
-                      Leitura previa para nivelar a turma antes da imersao.
+                      Leitura prévia para nivelar a turma antes da imersão.
                     </p>
                   </div>
                 </div>
@@ -405,9 +400,9 @@ export function MandadoSegurancaCoursePage() {
       <section id="conteudo" className="bg-[#0d1530] py-20 text-white sm:py-24">
         <div className="container-shell">
           <SectionHeading
-            eyebrow="Conteudo Programatico"
-            title="Da base constitucional a solucao de casos concretos"
-            description="As secoes abaixo foram organizadas para manter contraste alto, leitura confortavel e destaque coerente com a identidade visual do projeto."
+            eyebrow="Conteúdo Programático"
+            title="Da base constitucional à solução de casos concretos"
+            description="As seções abaixo foram organizadas para manter contraste alto, leitura confortável e destaque coerente com a identidade visual do projeto."
             dark
           />
 
@@ -418,7 +413,7 @@ export function MandadoSegurancaCoursePage() {
                 className="rounded-[30px] border border-white/10 bg-white/6 p-7 backdrop-blur-sm sm:p-8"
               >
                 <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#8ea4ff]">
-                  Modulo tematico
+                  Módulo temático
                 </p>
                 <h3 className="section-title mt-3 text-[1.8rem] font-bold leading-[1.04] tracking-[-0.04em] text-white">
                   {module.title}
@@ -444,17 +439,17 @@ export function MandadoSegurancaCoursePage() {
         </div>
       </section>
 
-      <section className="bg-white py-20 sm:py-24">
-        <div className="container-shell grid gap-6 lg:grid-cols-[0.92fr_1.08fr]">
+      <section className="bg-[#f5f6fa] px-3 pb-20 pt-6 sm:px-5 sm:pb-24 lg:pb-28">
+        <div className="container-shell grid gap-6 lg:grid-cols-[0.92fr_1.08fr] mx-auto max-w-[1160px]">
           <div className="rounded-[30px] border border-[rgba(17,23,47,0.08)] bg-[#f7f8fc] p-7 shadow-[0_18px_40px_rgba(17,23,47,0.04)] sm:p-8">
             <div className="flex h-14 w-14 items-center justify-center rounded-[20px] bg-[#eef2ff] text-[var(--primary)]">
               <Gavel className="h-6 w-6" />
             </div>
             <h3 className="section-title mt-6 text-[1.9rem] font-bold leading-[1.04] tracking-[-0.04em] text-[var(--foreground)]">
-              Jurisprudencia em destaque
+              Jurisprudência em destaque
             </h3>
             <p className="mt-4 text-base leading-8 text-[var(--muted-foreground)]">
-              A pagina valoriza o recorte jurisprudencial para mostrar que o curso nao fica apenas na teoria do writ, mas trabalha sua aplicacao real em materia previdenciaria.
+              A página valoriza o recorte jurisprudencial para mostrar que o curso não fica apenas na teoria do writ, mas trabalha sua aplicação real em matéria previdenciária.
             </p>
 
             <ul className="mt-6 space-y-4">
@@ -472,10 +467,10 @@ export function MandadoSegurancaCoursePage() {
               Chamada final
             </p>
             <h3 className="section-title mt-4 text-[2.2rem] font-extrabold leading-[1.02] tracking-[-0.05em] text-white sm:text-[2.8rem]">
-              Uma imersao para transformar cabimento e urgencia em estrategia processual segura
+              Uma imersão para transformar cabimento e urgência em estratégia processual segura
             </h3>
             <p className="mt-5 max-w-[38rem] text-base leading-8 text-white/82 sm:text-lg">
-              A nova landing do segundo card foi pensada para vender a profundidade tecnica do curso sem perder legibilidade, contraste e coerencia com a identidade visual do Instituto ESC.
+              A nova landing do segundo card foi pensada para vender a profundidade técnica do curso sem perder legibilidade, contraste e coerência com a identidade visual do Instituto ESC.
             </p>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -483,7 +478,7 @@ export function MandadoSegurancaCoursePage() {
                 href="/cadastro"
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 px-7 py-4 text-base font-semibold text-[var(--primary)] transition hover:bg-white/8"
               >
-                Garantir interesse na imersao
+                Garantir interesse na imersão
                 <ArrowRight className="h-4 w-4" />
               </Link>
 
@@ -502,16 +497,16 @@ export function MandadoSegurancaCoursePage() {
                   Estrutura
                 </p>
                 <p className="mt-2 text-sm leading-6 text-white/82">
-                  Hero, prova de valor, professor, conteudo e CTA final.
+                  Hero, prova de valor, professor, conteúdo e CTA final.
                 </p>
               </div>
               <div className="rounded-[24px] border border-white/12 bg-white/8 p-5">
                 <Users className="h-5 w-5 text-white/78" />
                 <p className="mt-3 text-sm font-bold uppercase tracking-[0.16em] text-white/56">
-                  Conversao
+                  Conversão
                 </p>
                 <p className="mt-2 text-sm leading-6 text-white/82">
-                  Botoes principais integrados ao fluxo de cadastro existente.
+                  Botões principais integrados ao fluxo de cadastro existente.
                 </p>
               </div>
               <div className="rounded-[24px] border border-white/12 bg-white/8 p-5">
@@ -520,7 +515,7 @@ export function MandadoSegurancaCoursePage() {
                   Contraste
                 </p>
                 <p className="mt-2 text-sm leading-6 text-white/82">
-                  Cores de texto ajustadas para manter leitura forte em todas as secoes.
+                  Cores de texto ajustadas para manter leitura forte em todas as seções.
                 </p>
               </div>
             </div>
@@ -528,27 +523,7 @@ export function MandadoSegurancaCoursePage() {
         </div>
       </section>
 
-      <footer className="bg-[#0d1530] py-10 text-white">
-        <div className="container-shell flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-          <div>
-            <p className="section-title text-2xl font-bold tracking-[-0.04em]">
-              Instituto ESC
-            </p>
-            <p className="mt-2 text-sm text-white/62">
-              O novo ecossistema do Direito Previdenciario.
-            </p>
-          </div>
-
-          <div className="flex flex-col gap-3 text-sm text-white/72 sm:items-end">
-            <Link href="/" className="transition hover:text-white">
-              Voltar para a pagina principal
-            </Link>
-            <Link href="/cadastro" className="transition hover:text-white">
-              Ir para cadastro
-            </Link>
-          </div>
-        </div>
-      </footer>
+      <Footer copy={landingContent.pt.footer} />
     </main>
   );
 }
