@@ -118,69 +118,76 @@ export const landingContent = {
       items: [
         {
           number: "01",
-          title: "Acidente de Trabalho",
+          title:
+            "PPP e LTCAT na Aposentadoria Especial: Obtencao, Retificacao e Impactos dos EPIs",
           description:
-            "Reconhecimento, nexo causal e teses de benefícios acidentários na prática.",
+            "Curso pratico sobre comprovacao do tempo especial, com foco na obtencao, retificacao e impugnacao do PPP e do LTCAT, alem da analise da eficacia dos EPIs na jurisprudencia atual.",
           details:
-            "Uma imersão voltada a casos de acidente de trabalho, com foco em estratégia probatória, construção do nexo causal e conduções práticas para benefícios por incapacidade e demandas acidentárias.",
+            "Imersao presencial que conecta prova tecnica, aspectos trabalhistas, reconhecimento previdenciario do tempo especial e estrategias processuais com base em casos concretos e precedentes vinculantes.",
           city: "Florianópolis - SC",
           date: "Mar 2026",
-          duration: "12 horas",
+          duration: "11 horas",
           seats: "40 vagas",
           status: "open",
+          infoHref: "/imersoes/ppp-ltcat-aposentadoria-especial",
         },
         {
           number: "02",
-          title: "Imersão em Teses Revisionais",
+          title: "Prática: Mandado de segurança em matéria previdenciária",
           description:
-            "Mapeamento e construção das teses revisionais mais relevantes do momento.",
+            "Estudo prático dos fundamentos, requisitos e procedimento do mandado de segurança, com foco em competência, liminar, recursos, Juizados Especiais Federais e jurisprudência do STF e STJ.",
           details:
-            "Encontro intensivo para identificar oportunidades revisionais, estruturar argumentos consistentes e selecionar as teses com melhor potencial de resultado no contencioso previdenciário atual.",
+            "Imersão presencial com leitura prévia e solução de casos concretos para aprofundar o uso estratégico do mandado de segurança em matéria previdenciária.",
           city: "Florianópolis - SC",
           date: "Mai 2026",
-          duration: "16 horas",
+          duration: "8 horas",
           seats: "35 vagas",
           status: "open",
+          infoHref: "/imersoes/mandado-de-seguranca-materia-previdenciaria",
         },
         {
           number: "03",
-          title: "Imersão em Processo Judicial Previdenciário",
+          title:
+            "Prática: Teses Revisionais Aplicáveis aos Benefícios Não Programáveis do RGPS",
           description:
-            "Da petição inicial à sentença: estratégia processual do início ao fim.",
+            "Análise prática das teses revisionais aplicáveis à aposentadoria por incapacidade permanente e à pensão por morte, incluindo descarte de contribuições e tempo de convivência do casal no RGPS.",
           details:
-            "Uma visão completa do processo judicial previdenciário, passando por petição inicial, definição de provas, movimentação processual e posicionamento estratégico em cada etapa do caso.",
+            "Imersão com solução de casos concretos e encaminhamento de modelos das teses para aplicação direta na prática previdenciária.",
           city: "Curitiba - PR",
           date: "Jul 2026",
-          duration: "16 horas",
+          duration: "4 horas",
           seats: "35 vagas",
           status: "soon",
+          infoHref:
+            "/imersoes/teses-revisionais-beneficios-nao-programaveis-rgps",
         },
         {
           number: "04",
-          title: "Imersão Prática em Recurso Extraordinário",
+          title: "Aposentadoria Especial na Prática",
           description:
-            "Repercussão geral, prequestionamento e a técnica recursal no STF.",
+            "Domine PPP, LTCAT e a prova do tempo especial com uma abordagem integrada sobre estrategia trabalhista, producao probatoria e jurisprudencia previdenciaria atual.",
           details:
-            "Conteúdo direcionado para quem quer dominar a técnica do recurso extraordinário, com ênfase em prequestionamento, filtros de admissibilidade e leitura estratégica de precedentes do STF.",
+            "Imersão prática com Carlos Alberto Pereira de Castro e João Batista Lazzari sobre prova técnica, EPIs, produção pericial e condução estratégica de demandas de aposentadoria especial.",
           city: "São Paulo - SP",
           date: "Set 2026",
-          duration: "12 horas",
+          duration: "11 horas",
           seats: "30 vagas",
           status: "soon",
+          infoHref: "/imersoes/aposentadoria-especial-na-pratica",
         },
-        {
-          number: "05",
-          title: "Imersão em Mandado de Segurança",
-          description:
-            "Cabimento, liminar e uso estratégico do MS na seara previdenciária.",
-          details:
-            "Imersão prática sobre mandado de segurança em matéria previdenciária, com análise de cabimento, construção de urgência e decisão sobre quando o MS realmente agrega valor à estratégia do caso.",
-          city: "Florianópolis - SC",
-          date: "Nov 2026",
-          duration: "12 horas",
-          seats: "30 vagas",
-          status: "soon",
-        },
+        // {
+        //   number: "05",
+        //   title: "Imersão em Mandado de Segurança",
+        //   description:
+        //     "Cabimento, liminar e uso estratégico do MS na seara previdenciária.",
+        //   details:
+        //     "Imersão prática sobre mandado de segurança em matéria previdenciária, com análise de cabimento, construção de urgência e decisão sobre quando o MS realmente agrega valor à estratégia do caso.",
+        //   city: "Florianópolis - SC",
+        //   date: "Nov 2026",
+        //   duration: "12 horas",
+        //   seats: "30 vagas",
+        //   status: "soon",
+        // },
       ],
     },
     postgraduate: {

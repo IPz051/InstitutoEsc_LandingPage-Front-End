@@ -24,6 +24,7 @@ type Immersion = {
   duration: string;
   seats: string;
   status: "open" | "soon";
+  infoHref?: string;
 };
 
 type ImmersionsSectionProps = {
@@ -106,15 +107,26 @@ function ImmersionCard({
 
       <div className="mt-auto border-t border-[rgba(17,23,47,0.08)] pt-5">
         <div className="flex flex-col gap-3">
-          <button
-            type="button"
-            onClick={() => onOpenInfo(immersion)}
-            aria-label={`${copy.infoAriaPrefix} ${immersion.title}`}
-            className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#2E4FBE33] px-5 py-3.5 text-sm font-semibold text-[var(--primary)] shadow-none transition hover:bg-[#2E4FBE40]"
-          >
-            <Info className="h-4 w-4" />
-            {copy.infoButtonLabel}
-          </button>
+          {immersion.infoHref ? (
+            <Link
+              href={immersion.infoHref}
+              aria-label={`${copy.infoAriaPrefix} ${immersion.title}`}
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#2E4FBE33] px-5 py-3.5 text-sm font-semibold text-[var(--primary)] shadow-none transition hover:bg-[#2E4FBE40]"
+            >
+              <Info className="h-4 w-4" />
+              {copy.infoButtonLabel}
+            </Link>
+          ) : (
+            <button
+              type="button"
+              onClick={() => onOpenInfo(immersion)}
+              aria-label={`${copy.infoAriaPrefix} ${immersion.title}`}
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#2E4FBE33] px-5 py-3.5 text-sm font-semibold text-[var(--primary)] shadow-none transition hover:bg-[#2E4FBE40]"
+            >
+              <Info className="h-4 w-4" />
+              {copy.infoButtonLabel}
+            </button>
+          )}
 
           <Link
             href="/cadastro"
