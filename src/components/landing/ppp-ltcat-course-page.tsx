@@ -20,6 +20,7 @@ import Link from "next/link";
 import type { ComponentType } from "react";
 
 import { landingContent } from "@/components/landing/content";
+import { CourseUrgencyBanner } from "@/components/landing/course-urgency-banner";
 import { Footer } from "@/components/landing/footer";
 
 const courseData = {
@@ -35,6 +36,11 @@ const courseData = {
     "Advogados, servidores públicos, peritos, contadores e estudantes",
   ctaLabel: "Quero reservar minha vaga",
   secondaryCta: "Ver conteúdo programático",
+  urgencyBanner: {
+    label: "Ultimas vagas",
+    title: "Esse aqui esta saindo rapido. Bora garantir a sua?",
+    ctaLabel: "Quero minha vaga",
+  },
   paragraphs: [
     "O curso examina, de forma prática e atualizada, o papel do PPP e do LTCAT na comprovação do tempo especial para fins de aposentadoria especial, abordando tanto os aspectos trabalhistas quanto previdenciários envolvidos na produção e utilização dessa prova técnica.",
     "Serão analisados os caminhos jurídicos para obtenção, retificação e impugnação do PPP, inclusive por meio de ação na Justiça do Trabalho, bem como os reflexos desses documentos no reconhecimento do tempo especial perante o INSS e no processo judicial previdenciário.",
@@ -171,7 +177,7 @@ function SectionHeading({
 export function PppLtcatCoursePage() {
   return (
     <main className="min-h-screen bg-white">
-      <section className="relative overflow-hidden bg-[#f6f7fb] pt-24 sm:pt-28">
+      <section className="relative overflow-hidden bg-[#f6f7fb] pt-0">
         <div className="pointer-events-none absolute inset-0">
           <div
             className="absolute inset-0 bg-cover bg-[center_40%] bg-no-repeat"
@@ -185,7 +191,9 @@ export function PppLtcatCoursePage() {
         </div>
 
         <div className="container-shell relative z-10 pb-18">
-          <div className="flex flex-col gap-14 lg:flex-row lg:items-end lg:justify-between">
+          <CourseUrgencyBanner {...courseData.urgencyBanner} />
+
+          <div className="flex flex-col gap-14 pt-10 sm:pt-12 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-[760px]">
               <div className="inline-flex items-center gap-2 rounded-full border border-[rgba(46,79,190,0.12)] bg-white/92 px-4 py-2 text-sm font-semibold text-[var(--primary)] shadow-[0_10px_30px_rgba(46,79,190,0.08)] backdrop-blur-sm">
                 <span className="h-2.5 w-2.5 rounded-full bg-[var(--secondary)]" />

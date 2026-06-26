@@ -20,6 +20,7 @@ import Link from "next/link";
 import type { ComponentType } from "react";
 
 import { landingContent } from "@/components/landing/content";
+import { CourseUrgencyBanner } from "@/components/landing/course-urgency-banner";
 import { Footer } from "@/components/landing/footer";
 
 const courseData = {
@@ -35,6 +36,11 @@ const courseData = {
     "Advogados e profissionais que atuam com revisões previdenciárias no RGPS",
   ctaLabel: "Quero reservar minha vaga",
   secondaryCta: "Ver conteúdo programático",
+  urgencyBanner: {
+    label: "Ultimas vagas",
+    title: "Vagas se esgotando! Garanta já a sua !",
+    ctaLabel: "Entrar na turma",
+  },
   paragraphs: [
     "A proposta desta landing é apresentar com clareza uma imersão objetiva e altamente aplicável para quem atua com benefícios não programáveis do RGPS no cenário pós-Reforma da Previdência.",
     "O curso concentra a discussão em duas frentes revisionais de grande relevância prática: o recálculo da aposentadoria por incapacidade permanente e da pensão por morte pela técnica de descarte de contribuições, e a análise do tempo de convivência do casal como requisito para manutenção da pensão por morte.",
@@ -160,7 +166,7 @@ function SectionHeading({
 export function TesesRevisionaisCoursePage() {
   return (
     <main className="min-h-screen bg-white">
-      <section className="relative overflow-hidden bg-[#f6f7fb] pt-24 sm:pt-28">
+      <section className="relative overflow-hidden bg-[#f6f7fb] pt-0">
         <div className="pointer-events-none absolute inset-0">
           <div
             className="absolute inset-0 bg-cover bg-[center_40%] bg-no-repeat"
@@ -174,7 +180,9 @@ export function TesesRevisionaisCoursePage() {
         </div>
 
         <div className="container-shell relative z-10 pb-18">
-          <div className="flex flex-col gap-14 lg:flex-row lg:items-end lg:justify-between">
+          <CourseUrgencyBanner {...courseData.urgencyBanner} />
+
+          <div className="flex flex-col gap-14 pt-10 sm:pt-12 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-[760px]">
               <div className="inline-flex items-center gap-2 rounded-full border border-[rgba(46,79,190,0.12)] bg-white/92 px-4 py-2 text-sm font-semibold text-[var(--primary)] shadow-[0_10px_30px_rgba(46,79,190,0.08)] backdrop-blur-sm">
                 <span className="h-2.5 w-2.5 rounded-full bg-[var(--secondary)]" />

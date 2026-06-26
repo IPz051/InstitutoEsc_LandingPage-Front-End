@@ -20,6 +20,7 @@ import Link from "next/link";
 import type { ComponentType } from "react";
 
 import { landingContent } from "@/components/landing/content";
+import { CourseUrgencyBanner } from "@/components/landing/course-urgency-banner";
 import { Footer } from "@/components/landing/footer";
 
 const courseData = {
@@ -35,6 +36,11 @@ const courseData = {
     "Advogados, servidores públicos, peritos, contadores e estudantes de Direito",
   ctaLabel: "Quero reservar minha vaga",
   secondaryCta: "Ver conteúdo programático",
+  urgencyBanner: {
+    label: "Ultimas vagas",
+    title: "Turma quase fechando. Garanta sua vaga !",
+    ctaLabel: "Quero entrar",
+  },
   paragraphs: [
     "Grande parte das ações envolvendo aposentadoria especial não depende apenas da existência do direito, mas da qualidade da prova técnica apresentada. Na prática profissional, são recorrentes situações como PPP incompleto, ausência ou inconsistências no LTCAT, divergências sobre o uso e a eficácia dos Equipamentos de Proteção Individual e dificuldades na produção de prova pericial adequada.",
     "Esses cenários exigem do advogado uma atuação estratégica que conecta, ao mesmo tempo, aspectos trabalhistas e previdenciários, além de exigir leitura atualizada da jurisprudência dos Tribunais Superiores e dos tribunais regionais.",
@@ -191,7 +197,7 @@ function SectionHeading({
 export function AposentadoriaEspecialCoursePage() {
   return (
     <main className="min-h-screen bg-white">
-      <section className="relative overflow-hidden bg-[#f6f7fb] pt-24 sm:pt-28">
+      <section className="relative overflow-hidden bg-[#f6f7fb] pt-0">
         <div className="pointer-events-none absolute inset-0">
           <div
             className="absolute inset-0 bg-cover bg-[center_40%] bg-no-repeat"
@@ -205,7 +211,9 @@ export function AposentadoriaEspecialCoursePage() {
         </div>
 
         <div className="container-shell relative z-10 pb-18">
-          <div className="flex flex-col gap-14 lg:flex-row lg:items-end lg:justify-between">
+          <CourseUrgencyBanner {...courseData.urgencyBanner} />
+
+          <div className="flex flex-col gap-14 pt-10 sm:pt-12 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-[760px]">
               <div className="inline-flex items-center gap-2 rounded-full border border-[rgba(46,79,190,0.12)] bg-white/92 px-4 py-2 text-sm font-semibold text-[var(--primary)] shadow-[0_10px_30px_rgba(46,79,190,0.08)] backdrop-blur-sm">
                 <span className="h-2.5 w-2.5 rounded-full bg-[var(--secondary)]" />
