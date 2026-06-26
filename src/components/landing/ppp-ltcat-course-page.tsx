@@ -22,6 +22,7 @@ import type { ComponentType } from "react";
 import { landingContent } from "@/components/landing/content";
 import { CourseUrgencyBanner } from "@/components/landing/course-urgency-banner";
 import { Footer } from "@/components/landing/footer";
+import { TestimonialsSection } from "@/components/landing/testimonials-section";
 
 const courseData = {
   badge: "Curso Presencial | Direito do Trabalho e Direito Previdenciário",
@@ -421,6 +422,8 @@ export function PppLtcatCoursePage() {
           </div>
         </div>
       </section>
+
+      <TestimonialsSection copy={landingContent.pt.testimonials} />
 
       <section className="bg-[#f5f6fa] px-3 pb-20 pt-6 sm:px-5 sm:pb-24 lg:pb-28">
         <div className="container-shell grid gap-6 lg:grid-cols-[0.92fr_1.08fr] mx-auto max-w-[1160px]">
